@@ -8,8 +8,6 @@ import java.util.Scanner;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
-import org.apache.jena.riot.RDFDataMgr;
-import org.apache.jena.riot.RDFFormat;
 import org.apache.jena.vocabulary.OWL;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.log4j.Logger;
@@ -53,7 +51,7 @@ public class VocabularyBuilder {
 	public void buildAll(String specFile, String outFile) throws JSONException, IOException {
 		logger.info("Started.");
 		FileOutputStream file = new FileOutputStream(new File(System.getProperty("user.dir") + "/" + outFile));
-		Model m = ModelFactory.createDefaultModel();
+		Model m = ModelFactory.createOntologyModel();
 		Scanner in = new Scanner(new File(specFile));
 		while (in.hasNextLine()) {
 			String[] line = in.nextLine().split("\t");
@@ -61,7 +59,6 @@ public class VocabularyBuilder {
 		}
 		in.close();
 		logger.info("Writing to file "+outFile+ "...");
-//		RDFDataMgr.write(file, m, RDFFormat.TTL);
 		
 		m.write(file, "TURTLE");
 		

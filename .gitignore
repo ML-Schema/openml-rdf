@@ -17,3 +17,5 @@ hs_err_pid*
 .project
 .settings/
 *~
+
+etc/*.xml
