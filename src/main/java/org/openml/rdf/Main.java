@@ -1,7 +1,8 @@
 package org.openml.rdf;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 
+import org.json.JSONException;
 import org.openml.rdf.vocabulary.VocabularyBuilder;
 
 /**
@@ -15,8 +16,8 @@ public class Main {
 		switch(args[0]) {
 		case "build-vocabulary":
 			try {
-				VocabularyBuilder.getInstance().buildAll(args[1]);
-			} catch (FileNotFoundException e) {
+				VocabularyBuilder.getInstance().buildAll(args[1], args[2]);
+			} catch (JSONException | IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

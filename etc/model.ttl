@@ -1,0 +1,119 @@
+<http://www.openml.org/vocabulary#version_label>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#evaluation_measures>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#creator>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#nr_of_downloads>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#last_update>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#visibility>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#uploader_id>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#contributor>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#source_data>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#data_id>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#url>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#description>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#ignore_attribute>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#row_id_attribute>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#tags>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#task_id>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#nr_of_likes>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#exact_name>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#run_task>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#tasktype>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#output_files>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#version>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#estimation_procedure>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#evaluations>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#name>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#features>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#licence>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#format>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#uploader>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#qualities>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#target_feature>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#target_values>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#update_comment>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#date>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#runs>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#run_id>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#suggest>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#run_flow>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#default_target_attribute>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
+
+<http://www.openml.org/vocabulary#status>
+      a       <http://www.w3.org/2002/07/owl#OntologyProperty> .
