@@ -16,7 +16,7 @@ public class Main {
 		switch(args[0]) {
 		case "build-vocabulary":
 			try {
-				VocabularyBuilder.getInstance().buildAll(args[1], args[2]);
+				VocabularyBuilder.getInstance().buildAll(args[1], args[2], args[3]);
 			} catch (JSONException | IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

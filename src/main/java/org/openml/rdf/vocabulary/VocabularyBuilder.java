@@ -3,14 +3,18 @@ package org.openml.rdf.vocabulary;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.vocabulary.OWL;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.log4j.Logger;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.openml.rdf.util.Util;
@@ -22,6 +26,11 @@ import org.openml.rdf.util.Util;
 public class VocabularyBuilder {
 
 	private static final String ONTO_NAMESPACE = "http://www.openml.org/vocabulary#";
+
+	/**
+	 * Set this to 'true' to export tab-separated files for annotation.
+	 */
+	private static final boolean EXPORT_MODE = false;
 	
 	private static Logger logger = Logger.getLogger(VocabularyBuilder.class);
 
@@ -48,10 +57,11 @@ public class VocabularyBuilder {
 	 * @throws IOException 
 	 * @throws JSONException 
 	 */
-	public void buildAll(String specFile, String outFile) throws JSONException, IOException {
+	public void buildAll(String specFile, String inFile, String outFile) throws JSONException, IOException {
 		logger.info("Started.");
-		FileOutputStream file = new FileOutputStream(new File(System.getProperty("user.dir") + "/" + outFile));
-		Model m = ModelFactory.createOntologyModel();
+		String base = System.getProperty("user.dir") + "/";
+		FileOutputStream file = new FileOutputStream(new File(base + outFile));
+		Model m = RDFDataMgr.loadModel(base + inFile, Lang.RDFXML);
 		Scanner in = new Scanner(new File(specFile));
 		while (in.hasNextLine()) {
 			String[] line = in.nextLine().split("\t");
@@ -60,7 +70,7 @@ public class VocabularyBuilder {
 		in.close();
 		logger.info("Writing to file "+outFile+ "...");
 		
-		m.write(file, "TURTLE");
+		m.write(file, "RDF/XML");
 		
 		file.close();
 		logger.info("Done.");
@@ -74,20 +84,49 @@ public class VocabularyBuilder {
 	 */
 	private void build(String className, String jsonURL, Model m) throws JSONException, IOException {
 
-		logger.info("Processing class <" + className + ">...");
+		logger.info("Processing class <" + ONTO_NAMESPACE + className + ">...");
 		logger.info("Parsing JSON URL " + jsonURL + "...");
 		
 		// fetch JSON file
 		JSONObject json = Util.readJsonFromUrl(jsonURL);
 		logger.info(json);
 		
+		PrintWriter pw;
+		if(EXPORT_MODE)
+			pw = new PrintWriter(new File(className + ".csv"));
+		
 		// iterate among keys
 		for(String key : json.keySet()) {
+			
 			String uri = ONTO_NAMESPACE + key;
 			logger.info("Creating property <" + uri + ">...");
+			
+			// get property information
+			String type, obj;
+			Object value = json.get(key);
+			if(value instanceof JSONObject) {
+				JSONObject objValue = (JSONObject) value;
+				type = "object";
+				obj = objValue.toString().replaceAll("\n", " ");
+			} else if(value instanceof JSONArray) {
+				JSONArray arrValue = (JSONArray) value;
+				type = "object";
+				obj = arrValue.toString().replaceAll("\n", " ");
+			} else { // datatype?
+				type = "datatype";
+				obj = value.toString().replaceAll("\n", " ");
+			}
+
+			if(EXPORT_MODE)
+				pw.println(key + "\t" + type + "\t" + obj);
+			
+			// save property to model
 			Property p = m.createProperty(uri);
 			m.add(p, RDF.type, OWL.OntologyProperty);
 		}
+		
+		if(EXPORT_MODE)
+			pw.close();
 		
 
 	}
