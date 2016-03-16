@@ -1,0 +1,2548 @@
+@prefix : <http://www.openml.org/vocabulary#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.openml.org/vocabulary> .
+
+<http://www.openml.org/vocabulary> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.openml.org/vocabulary#ARFFFile
+
+:ARFFFile rdf:type owl:Class ;
+          
+          rdfs:subClassOf :representation .
+
+
+
+###  http://www.openml.org/vocabulary#ApacheLicence
+
+:ApacheLicence rdf:type owl:Class ;
+               
+               rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#BSD2ClauseLicence
+
+:BSD2ClauseLicence rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#BiasVarianceProfile
+
+:BiasVarianceProfile rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :flowQuality .
+
+
+
+###  http://www.openml.org/vocabulary#BiasWeightKohaviWolpert
+
+:BiasWeightKohaviWolpert rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :flowQuality .
+
+
+
+###  http://www.openml.org/vocabulary#BiasWeightWebb
+
+:BiasWeightWebb rdf:type owl:Class ;
+                
+                rdfs:subClassOf :flowQuality .
+
+
+
+###  http://www.openml.org/vocabulary#CC0
+
+:CC0 rdf:type owl:Class ;
+     
+     rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#CCBY
+
+:CCBY rdf:type owl:Class ;
+      
+      rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#CCBY-NC
+
+:CCBY-NC rdf:type owl:Class ;
+         
+         rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#CCBY-NC-ND
+
+:CCBY-NC-ND rdf:type owl:Class ;
+            
+            rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#CCBY-NC-SA
+
+:CCBY-NC-SA rdf:type owl:Class ;
+            
+            rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#CCBY-ND
+
+:CCBY-ND rdf:type owl:Class ;
+         
+         rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#CCBY-SA
+
+:CCBY-SA rdf:type owl:Class ;
+         
+         rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#ClassCount
+
+:ClassCount rdf:type owl:Class ;
+            
+            rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#ClassEntropy
+
+:ClassEntropy rdf:type owl:Class ;
+              
+              rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#DecisionStumpAUC
+
+:DecisionStumpAUC rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#DecisionStumpErrRate
+
+:DecisionStumpErrRate rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#DecisionStumpKappa
+
+:DecisionStumpKappa rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#DefaultAccuracy
+
+:DefaultAccuracy rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#Dimensionality
+
+:Dimensionality rdf:type owl:Class ;
+                
+                rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#EclipseLicence
+
+:EclipseLicence rdf:type owl:Class ;
+                
+                rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#EntropyClass
+
+:EntropyClass rdf:type owl:Class ;
+              
+              rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#EquivalentNumberOfAtts
+
+:EquivalentNumberOfAtts rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#EquivalentNumberOfFeatures
+
+:EquivalentNumberOfFeatures rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#FeatureAbsoluteSkewness
+
+:FeatureAbsoluteSkewness rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#FeatureEntropy
+
+:FeatureEntropy rdf:type owl:Class ;
+                
+                rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#FeatureKurtosis
+
+:FeatureKurtosis rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#FeatureSkewness
+
+:FeatureSkewness rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#GPLv2
+
+:GPLv2 rdf:type owl:Class ;
+       
+       rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#GPLv3
+
+:GPLv3 rdf:type owl:Class ;
+       
+       rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#HandlesMissingValues
+
+:HandlesMissingValues rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :flowQuality .
+
+
+
+###  http://www.openml.org/vocabulary#HandlesNominalFeatures
+
+:HandlesNominalFeatures rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :flowQuality .
+
+
+
+###  http://www.openml.org/vocabulary#HandlesNominalTarget
+
+:HandlesNominalTarget rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :flowQuality .
+
+
+
+###  http://www.openml.org/vocabulary#HandlesNonBinaryClasses
+
+:HandlesNonBinaryClasses rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :flowQuality .
+
+
+
+###  http://www.openml.org/vocabulary#HandlesNumericFeatures
+
+:HandlesNumericFeatures rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :flowQuality .
+
+
+
+###  http://www.openml.org/vocabulary#HandlesNumericTarget
+
+:HandlesNumericTarget rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :flowQuality .
+
+
+
+###  http://www.openml.org/vocabulary#HoeffdingAdwin.changes
+
+:HoeffdingAdwin.changes rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#HoeffdingAdwin.warnings
+
+:HoeffdingAdwin.warnings rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#HoeffdingDDM.changes
+
+:HoeffdingDDM.changes rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#HoeffdingDDM.warnings
+
+:HoeffdingDDM.warnings rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#ID
+
+:ID rdf:type owl:Class ;
+    
+    rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#IncompleteInstanceCount
+
+:IncompleteInstanceCount rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#InstanceCount
+
+:InstanceCount rdf:type owl:Class ;
+               
+               rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#J48.00001.AUC
+
+:J48.00001.AUC rdf:type owl:Class ;
+               
+               rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#J48.00001.ErrRate
+
+:J48.00001.ErrRate rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#J48.00001.Kappa
+
+:J48.00001.Kappa rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#J48.0001.AUC
+
+:J48.0001.AUC rdf:type owl:Class ;
+              
+              rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#J48.0001.ErrRate
+
+:J48.0001.ErrRate rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#J48.0001.Kappa
+
+:J48.0001.Kappa rdf:type owl:Class ;
+                
+                rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#J48.001.AUC
+
+:J48.001.AUC rdf:type owl:Class ;
+             
+             rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#J48.001.ErrRate
+
+:J48.001.ErrRate rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#J48.001.Kappa
+
+:J48.001.Kappa rdf:type owl:Class ;
+               
+               rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#JAVA
+
+:JAVA rdf:type owl:Class ;
+      
+      rdfs:subClassOf :software .
+
+
+
+###  http://www.openml.org/vocabulary#JRipAUC
+
+:JRipAUC rdf:type owl:Class ;
+         
+         rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#JRipErrRate
+
+:JRipErrRate rdf:type owl:Class ;
+             
+             rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#JRipKappa
+
+:JRipKappa rdf:type owl:Class ;
+           
+           rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#JSON
+
+:JSON rdf:type owl:Class ;
+      
+      rdfs:subClassOf :representation .
+
+
+
+###  http://www.openml.org/vocabulary#JointEntropy
+
+:JointEntropy rdf:type owl:Class ;
+              
+              rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#LGPLv3
+
+:LGPLv3 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#LandMarker1NN
+
+:LandMarker1NN rdf:type owl:Class ;
+               
+               rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#LandMarker1Rule
+
+:LandMarker1Rule rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#LandmarkerNaiveBayes
+
+:LandmarkerNaiveBayes rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MITLicence
+
+:MITLicence rdf:type owl:Class ;
+            
+            rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#MOA
+
+:MOA rdf:type owl:Class ;
+     
+     rdfs:subClassOf :environment .
+
+
+
+###  http://www.openml.org/vocabulary#MPL2.0
+
+:MPL2.0 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#MStatistic
+
+:MStatistic rdf:type owl:Class ;
+            
+            rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MStatisticChiSquared
+
+:MStatisticChiSquared rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MStatisticDegreesOfFreedom
+
+:MStatisticDegreesOfFreedom rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MajorityClassSize
+
+:MajorityClassSize rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MaxNominalAttDistinctValues
+
+:MaxNominalAttDistinctValues rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MeanAttributeEntropy
+
+:MeanAttributeEntropy rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MeanKurtosisOfNumericAtts
+
+:MeanKurtosisOfNumericAtts rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MeanMeansOfNumericAtts
+
+:MeanMeansOfNumericAtts rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MeanMutualInformation
+
+:MeanMutualInformation rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MeanNominalAttDistinctValues
+
+:MeanNominalAttDistinctValues rdf:type owl:Class ;
+                              
+                              rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MeanSkewnessOfNumericAtts
+
+:MeanSkewnessOfNumericAtts rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MeanStdDevOfNumericAtts
+
+:MeanStdDevOfNumericAtts rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MinNominalAttDistinctValues
+
+:MinNominalAttDistinctValues rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MinorityClassSize
+
+:MinorityClassSize rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#MutualInformationMean
+
+:MutualInformationMean rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NBTreeAUC
+
+:NBTreeAUC rdf:type owl:Class ;
+           
+           rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NBTreeErrRate
+
+:NBTreeErrRate rdf:type owl:Class ;
+               
+               rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NBTreeKappa
+
+:NBTreeKappa rdf:type owl:Class ;
+             
+             rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NaiveBayesAUC
+
+:NaiveBayesAUC rdf:type owl:Class ;
+               
+               rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NaiveBayesAdwin.changes
+
+:NaiveBayesAdwin.changes rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NaiveBayesAdwin.warnings
+
+:NaiveBayesAdwin.warnings rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NaiveBayesDdm.changes
+
+:NaiveBayesDdm.changes rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NaiveBayesDdm.warnings
+
+:NaiveBayesDdm.warnings rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NaiveBayesErrRate
+
+:NaiveBayesErrRate rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NaiveBayesKappa
+
+:NaiveBayesKappa rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NegativePercentage
+
+:NegativePercentage rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NoiseToSignalRatio
+
+:NoiseToSignalRatio rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NumAttributes
+
+:NumAttributes rdf:type owl:Class ;
+               
+               rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NumBinaryAtts
+
+:NumBinaryAtts rdf:type owl:Class ;
+               
+               rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NumMissingValues
+
+:NumMissingValues rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NumNominalAtts
+
+:NumNominalAtts rdf:type owl:Class ;
+                
+                rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NumNumericAtts
+
+:NumNumericAtts rdf:type owl:Class ;
+                
+                rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NumberOfClasses
+
+:NumberOfClasses rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NumberOfFeatures
+
+:NumberOfFeatures rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NumberOfInstances
+
+:NumberOfInstances rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NumberOfInstancesWithMissingValues
+
+:NumberOfInstancesWithMissingValues rdf:type owl:Class ;
+                                    
+                                    rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NumberOfMissingValues
+
+:NumberOfMissingValues rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NumberOfNumericFeatures
+
+:NumberOfNumericFeatures rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#NumberOfSymbolicFeatures
+
+:NumberOfSymbolicFeatures rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#OpenMLEntity
+
+:OpenMLEntity rdf:type owl:Class .
+
+
+
+###  http://www.openml.org/vocabulary#PYTHON
+
+:PYTHON rdf:type owl:Class ;
+        
+        rdfs:subClassOf :software .
+
+
+
+###  http://www.openml.org/vocabulary#PercentageOfBinaryAtts
+
+:PercentageOfBinaryAtts rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#PercentageOfMissingValues
+
+:PercentageOfMissingValues rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#PercentageOfNominalAtts
+
+:PercentageOfNominalAtts rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#PercentageOfNumericAtts
+
+:PercentageOfNumericAtts rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#PerformsClassification
+
+:PerformsClassification rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :flowQuality .
+
+
+
+###  http://www.openml.org/vocabulary#PerformsRegression
+
+:PerformsRegression rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :flowQuality .
+
+
+
+###  http://www.openml.org/vocabulary#PositivePercentage
+
+:PositivePercentage rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#ProvenanceEntity
+
+:ProvenanceEntity rdf:type owl:Class .
+
+
+
+###  http://www.openml.org/vocabulary#PublicationDate
+
+:PublicationDate rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#R
+
+:R rdf:type owl:Class ;
+   
+   rdfs:subClassOf :software .
+
+
+
+###  http://www.openml.org/vocabulary#RAPIDMINER
+
+:RAPIDMINER rdf:type owl:Class ;
+            
+            rdfs:subClassOf :environment .
+
+
+
+###  http://www.openml.org/vocabulary#REPTreeDepth1AUC
+
+:REPTreeDepth1AUC rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#REPTreeDepth1ErrRate
+
+:REPTreeDepth1ErrRate rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#REPTreeDepth1Kappa
+
+:REPTreeDepth1Kappa rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#REPTreeDepth2AUC
+
+:REPTreeDepth2AUC rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#REPTreeDepth2ErrRate
+
+:REPTreeDepth2ErrRate rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#REPTreeDepth2Kappa
+
+:REPTreeDepth2Kappa rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#REPTreeDepth3AUC
+
+:REPTreeDepth3AUC rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#REPTreeDepth3ErrRate
+
+:REPTreeDepth3ErrRate rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#REPTreeDepth3Kappa
+
+:REPTreeDepth3Kappa rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth1AUC
+
+:RandomTreeDepth1AUC rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth1ErrRate
+
+:RandomTreeDepth1ErrRate rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth1Kappa
+
+:RandomTreeDepth1Kappa rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth2AUC
+
+:RandomTreeDepth2AUC rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth2ErrRate
+
+:RandomTreeDepth2ErrRate rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth2Kappa
+
+:RandomTreeDepth2Kappa rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth3AUC
+
+:RandomTreeDepth3AUC rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth3ErrRate
+
+:RandomTreeDepth3ErrRate rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth3Kappa
+
+:RandomTreeDepth3Kappa rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth4AUC
+
+:RandomTreeDepth4AUC rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth4ErrRate
+
+:RandomTreeDepth4ErrRate rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth4Kappa
+
+:RandomTreeDepth4Kappa rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth5AUC
+
+:RandomTreeDepth5AUC rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth5ErrRate
+
+:RandomTreeDepth5ErrRate rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#RandomTreeDepth5Kappa
+
+:RandomTreeDepth5Kappa rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#SVMe1AUC
+
+:SVMe1AUC rdf:type owl:Class ;
+          
+          rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#SVMe1ErrRate
+
+:SVMe1ErrRate rdf:type owl:Class ;
+              
+              rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#SVMe1Kappa
+
+:SVMe1Kappa rdf:type owl:Class ;
+            
+            rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#SVMe2AUC
+
+:SVMe2AUC rdf:type owl:Class ;
+          
+          rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#SVMe2ErrRate
+
+:SVMe2ErrRate rdf:type owl:Class ;
+              
+              rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#SVMe2Kappa
+
+:SVMe2Kappa rdf:type owl:Class ;
+            
+            rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#SVMe3AUC
+
+:SVMe3AUC rdf:type owl:Class ;
+          
+          rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#SVMe3ErrRate
+
+:SVMe3ErrRate rdf:type owl:Class ;
+              
+              rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#SVMe3Kappa
+
+:SVMe3Kappa rdf:type owl:Class ;
+            
+            rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#SimpleLogisticAUC
+
+:SimpleLogisticAUC rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#SimpleLogisticErrRate
+
+:SimpleLogisticErrRate rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#SimpleLogisticKappa
+
+:SimpleLogisticKappa rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#StandardDeviationRatio
+
+:StandardDeviationRatio rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#StdvNominalAttDistinctValues
+
+:StdvNominalAttDistinctValues rdf:type owl:Class ;
+                              
+                              rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#SupportEntity
+
+:SupportEntity rdf:type owl:Class .
+
+
+
+###  http://www.openml.org/vocabulary#UCIRepositoryURL
+
+:UCIRepositoryURL rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#VarianceWeightKohaviWolpert
+
+:VarianceWeightKohaviWolpert rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :flowQuality .
+
+
+
+###  http://www.openml.org/vocabulary#VarianceWeightWebb
+
+:VarianceWeightWebb rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :flowQuality .
+
+
+
+###  http://www.openml.org/vocabulary#WEKA
+
+:WEKA rdf:type owl:Class ;
+      
+      rdfs:subClassOf :environment .
+
+
+
+###  http://www.openml.org/vocabulary#XMLFile
+
+:XMLFile rdf:type owl:Class ;
+         
+         rdfs:subClassOf :representation .
+
+
+
+###  http://www.openml.org/vocabulary#acknowledgement
+
+:acknowledgement rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#area_under_roc_curve
+
+:area_under_roc_curve rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#author
+
+:author rdf:type owl:Class ;
+        
+        rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#average_cost
+
+:average_cost rdf:type owl:Class ;
+              
+              rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#build_cpu_time
+
+:build_cpu_time rdf:type owl:Class ;
+                
+                rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#build_memory
+
+:build_memory rdf:type owl:Class ;
+              
+              rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#c_index
+
+:c_index rdf:type owl:Class ;
+         
+         rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#citation
+
+:citation rdf:type owl:Class ;
+          
+          rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#class_complexity
+
+:class_complexity rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#class_complexity_gain
+
+:class_complexity_gain rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#clustering
+
+:clustering rdf:type owl:Class ;
+            
+            rdfs:subClassOf :task .
+
+
+
+###  http://www.openml.org/vocabulary#confusion_matrix
+
+:confusion_matrix rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#contributor
+
+:contributor rdf:type owl:Class ;
+             
+             rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#correlation_coefficient
+
+:correlation_coefficient rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#costMatrix
+
+:costMatrix rdf:type owl:Class ;
+            
+            rdfs:subClassOf :SupportEntity .
+
+
+
+###  http://www.openml.org/vocabulary#dataFormat
+
+:dataFormat rdf:type owl:Class ;
+            
+            rdfs:subClassOf :SupportEntity .
+
+
+
+###  http://www.openml.org/vocabulary#dataQuality
+
+:dataQuality rdf:type owl:Class ;
+             
+             rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#dataVisibility
+
+:dataVisibility rdf:type owl:Class ;
+                
+                rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#dataset
+
+:dataset rdf:type owl:Class ;
+         
+         rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#datatype
+
+:datatype rdf:type owl:Class ;
+          
+          rdfs:subClassOf :SupportEntity .
+
+
+
+###  http://www.openml.org/vocabulary#description
+
+:description rdf:type owl:Class ;
+             
+             rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#environment
+
+:environment rdf:type owl:Class ;
+             
+             rdfs:subClassOf :SupportEntity .
+
+
+
+###  http://www.openml.org/vocabulary#evaluationMeasure
+
+:evaluationMeasure rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#evaluationProcedure
+
+:evaluationProcedure rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#f_measure
+
+:f_measure rdf:type owl:Class ;
+           
+           rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#feature
+
+:feature rdf:type owl:Class ;
+         
+         rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#featureQuality
+
+:featureQuality rdf:type owl:Class ;
+                
+                rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#file
+
+:file rdf:type owl:Class ;
+      
+      rdfs:subClassOf :representation .
+
+
+
+###  http://www.openml.org/vocabulary#flow
+
+:flow rdf:type owl:Class ;
+      
+      rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#flowQuality
+
+:flowQuality rdf:type owl:Class ;
+             
+             rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#ignoreAttribute
+
+:ignoreAttribute rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :SupportEntity .
+
+
+
+###  http://www.openml.org/vocabulary#implementationInformation
+
+:implementationInformation rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#instruction
+
+:instruction rdf:type owl:Class ;
+             
+             rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#kNN_1NAUC
+
+:kNN_1NAUC rdf:type owl:Class ;
+           
+           rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#kNN_1NErrRate
+
+:kNN_1NErrRate rdf:type owl:Class ;
+               
+               rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#kNN_1NKappa
+
+:kNN_1NKappa rdf:type owl:Class ;
+             
+             rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#kNN_2NAUC
+
+:kNN_2NAUC rdf:type owl:Class ;
+           
+           rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#kNN_2NErrRate
+
+:kNN_2NErrRate rdf:type owl:Class ;
+               
+               rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#kNN_2NKappa
+
+:kNN_2NKappa rdf:type owl:Class ;
+             
+             rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#kNN_3NAUC
+
+:kNN_3NAUC rdf:type owl:Class ;
+           
+           rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#kNN_3NErrRate
+
+:kNN_3NErrRate rdf:type owl:Class ;
+               
+               rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#kNN_3NKappa
+
+:kNN_3NKappa rdf:type owl:Class ;
+             
+             rdfs:subClassOf :dataQuality .
+
+
+
+###  http://www.openml.org/vocabulary#kappa
+
+:kappa rdf:type owl:Class ;
+       
+       rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#kb_relative_information_score
+
+:kb_relative_information_score rdf:type owl:Class ;
+                               
+                               rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#kohavi_wolpert_bias_squared
+
+:kohavi_wolpert_bias_squared rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#kohavi_wolpert_error
+
+:kohavi_wolpert_error rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#kohavi_wolpert_sigma_squared
+
+:kohavi_wolpert_sigma_squared rdf:type owl:Class ;
+                              
+                              rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#kohavi_wolpert_variance
+
+:kohavi_wolpert_variance rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#kononenko_bratko_information_score
+
+:kononenko_bratko_information_score rdf:type owl:Class ;
+                                    
+                                    rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#labeledDataset
+
+:labeledDataset rdf:type owl:Class ;
+                
+                rdfs:subClassOf :SupportEntity .
+
+
+
+###  http://www.openml.org/vocabulary#learningCurve
+
+:learningCurve rdf:type owl:Class ;
+               
+               rdfs:subClassOf :task .
+
+
+
+###  http://www.openml.org/vocabulary#licence
+
+:licence rdf:type owl:Class ;
+         
+         rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#machineLearningChallenge
+
+:machineLearningChallenge rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :task .
+
+
+
+###  http://www.openml.org/vocabulary#matthews_correlation_coefficient
+
+:matthews_correlation_coefficient rdf:type owl:Class ;
+                                  
+                                  rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#mean_absolute_error
+
+:mean_absolute_error rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#mean_class_complexity
+
+:mean_class_complexity rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#mean_class_complexity_gain
+
+:mean_class_complexity_gain rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#mean_f_measure
+
+:mean_f_measure rdf:type owl:Class ;
+                
+                rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#mean_kononenko_bratko_information_score
+
+:mean_kononenko_bratko_information_score rdf:type owl:Class ;
+                                         
+                                         rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#mean_precision
+
+:mean_precision rdf:type owl:Class ;
+                
+                rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#mean_prior_absolute_error
+
+:mean_prior_absolute_error rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#mean_prior_class_complexity
+
+:mean_prior_class_complexity rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#mean_recall
+
+:mean_recall rdf:type owl:Class ;
+             
+             rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#mean_weighted_area_under_roc_curve
+
+:mean_weighted_area_under_roc_curve rdf:type owl:Class ;
+                                    
+                                    rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#mean_weighted_f_measure
+
+:mean_weighted_f_measure rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#mean_weighted_precision
+
+:mean_weighted_precision rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#mean_weighted_recall
+
+:mean_weighted_recall rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#model
+
+:model rdf:type owl:Class ;
+       
+       rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#name
+
+:name rdf:type owl:Class ;
+      
+      rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#noLicence
+
+:noLicence rdf:type owl:Class ;
+           
+           rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#nominal
+
+:nominal rdf:type owl:Class ;
+         
+         rdfs:subClassOf :datatype .
+
+
+
+###  http://www.openml.org/vocabulary#number_of_instances
+
+:number_of_instances rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#numeric
+
+:numeric rdf:type owl:Class ;
+         
+         rdfs:subClassOf :datatype .
+
+
+
+###  http://www.openml.org/vocabulary#os_information
+
+:os_information rdf:type owl:Class ;
+                
+                rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#parameter
+
+:parameter rdf:type owl:Class ;
+           
+           rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#parameterSetting
+
+:parameterSetting rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#person
+
+:person rdf:type owl:Class ;
+        
+        rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#precision
+
+:precision rdf:type owl:Class ;
+           
+           rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#prediction
+
+:prediction rdf:type owl:Class ;
+            
+            rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#predictive_accuracy
+
+:predictive_accuracy rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#prior_class_complexity
+
+:prior_class_complexity rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#prior_entropy
+
+:prior_entropy rdf:type owl:Class ;
+               
+               rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#programmingLanguage
+
+:programmingLanguage rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :SupportEntity .
+
+
+
+###  http://www.openml.org/vocabulary#publication
+
+:publication rdf:type owl:Class ;
+             
+             rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#publiclyAvailable
+
+:publiclyAvailable rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :licence .
+
+
+
+###  http://www.openml.org/vocabulary#ram_hours
+
+:ram_hours rdf:type owl:Class ;
+           
+           rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#recall
+
+:recall rdf:type owl:Class ;
+        
+        rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#relative_absolute_error
+
+:relative_absolute_error rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#representation
+
+:representation rdf:type owl:Class ;
+                
+                rdfs:subClassOf :SupportEntity .
+
+
+
+###  http://www.openml.org/vocabulary#root_mean_prior_squared_error
+
+:root_mean_prior_squared_error rdf:type owl:Class ;
+                               
+                               rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#root_mean_squared_error
+
+:root_mean_squared_error rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#root_relative_squared_error
+
+:root_relative_squared_error rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#rowIDAttribute
+
+:rowIDAttribute rdf:type owl:Class ;
+                
+                rdfs:subClassOf :SupportEntity .
+
+
+
+###  http://www.openml.org/vocabulary#run
+
+:run rdf:type owl:Class ;
+     
+     rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#run_cpu_time
+
+:run_cpu_time rdf:type owl:Class ;
+              
+              rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#run_memory
+
+:run_memory rdf:type owl:Class ;
+            
+            rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#run_virtual_memory
+
+:run_virtual_memory rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#scimark_benchmark
+
+:scimark_benchmark rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#single_point_area_under_roc_curve
+
+:single_point_area_under_roc_curve rdf:type owl:Class ;
+                                   
+                                   rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#software
+
+:software rdf:type owl:Class ;
+          
+          rdfs:subClassOf :SupportEntity .
+
+
+
+###  http://www.openml.org/vocabulary#sourceURL
+
+:sourceURL rdf:type owl:Class ;
+           
+           rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#study
+
+:study rdf:type owl:Class ;
+       
+       rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#submissionDate
+
+:submissionDate rdf:type owl:Class ;
+                
+                rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#supervisedClassification
+
+:supervisedClassification rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :task .
+
+
+
+###  http://www.openml.org/vocabulary#supervisedDataStreamClassification
+
+:supervisedDataStreamClassification rdf:type owl:Class ;
+                                    
+                                    rdfs:subClassOf :task .
+
+
+
+###  http://www.openml.org/vocabulary#supervisedRegression
+
+:supervisedRegression rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :task .
+
+
+
+###  http://www.openml.org/vocabulary#survivalAnalysis
+
+:survivalAnalysis rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :task .
+
+
+
+###  http://www.openml.org/vocabulary#targetAttribute
+
+:targetAttribute rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :SupportEntity .
+
+
+
+###  http://www.openml.org/vocabulary#targetFeatureEvent
+
+:targetFeatureEvent rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :SupportEntity .
+
+
+
+###  http://www.openml.org/vocabulary#targetFeatureLeft
+
+:targetFeatureLeft rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :SupportEntity .
+
+
+
+###  http://www.openml.org/vocabulary#targetFeatureRight
+
+:targetFeatureRight rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :SupportEntity .
+
+
+
+###  http://www.openml.org/vocabulary#task
+
+:task rdf:type owl:Class ;
+      
+      rdfs:subClassOf :OpenMLEntity .
+
+
+
+###  http://www.openml.org/vocabulary#title
+
+:title rdf:type owl:Class ;
+       
+       rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#total_cost
+
+:total_cost rdf:type owl:Class ;
+            
+            rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#unclassified_instance_count
+
+:unclassified_instance_count rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#usercpu_time_millis
+
+:usercpu_time_millis rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#usercpu_time_millis_testing
+
+:usercpu_time_millis_testing rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#usercpu_time_millis_training
+
+:usercpu_time_millis_training rdf:type owl:Class ;
+                              
+                              rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#version
+
+:version rdf:type owl:Class ;
+         
+         rdfs:subClassOf :ProvenanceEntity .
+
+
+
+###  http://www.openml.org/vocabulary#webb_bias
+
+:webb_bias rdf:type owl:Class ;
+           
+           rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#webb_error
+
+:webb_error rdf:type owl:Class ;
+            
+            rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary#webb_variance
+
+:webb_variance rdf:type owl:Class ;
+               
+               rdfs:subClassOf :evaluationMeasure .
+
+
+
+###  http://www.openml.org/vocabulary/Tag
+
+<http://www.openml.org/vocabulary/Tag> rdf:type owl:Class ;
+                                       
+                                       rdfs:subClassOf :OpenMLEntity .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BiasVarianceProfile
+                :BiasWeightKohaviWolpert
+                :BiasWeightWebb
+                :HandlesMissingValues
+                :HandlesNominalFeatures
+                :HandlesNominalTarget
+                :HandlesNonBinaryClasses
+                :HandlesNumericFeatures
+                :HandlesNumericTarget
+                :PerformsClassification
+                :PerformsRegression
+                :VarianceWeightKohaviWolpert
+                :VarianceWeightWebb
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ClassCount
+                :ClassEntropy
+                :DecisionStumpAUC
+                :DecisionStumpErrRate
+                :DecisionStumpKappa
+                :DefaultAccuracy
+                :Dimensionality
+                :EntropyClass
+                :EquivalentNumberOfAtts
+                :EquivalentNumberOfFeatures
+                :FeatureAbsoluteSkewness
+                :FeatureEntropy
+                :FeatureKurtosis
+                :FeatureSkewness
+                :HoeffdingAdwin.changes
+                :HoeffdingAdwin.warnings
+                :HoeffdingDDM.changes
+                :HoeffdingDDM.warnings
+                :IncompleteInstanceCount
+                :InstanceCount
+                :J48.00001.AUC
+                :J48.00001.ErrRate
+                :J48.00001.Kappa
+                :J48.0001.AUC
+                :J48.0001.ErrRate
+                :J48.0001.Kappa
+                :J48.001.AUC
+                :J48.001.ErrRate
+                :J48.001.Kappa
+                :JRipAUC
+                :JRipErrRate
+                :JRipKappa
+                :JointEntropy
+                :LandMarker1NN
+                :LandMarker1Rule
+                :LandmarkerNaiveBayes
+                :MStatistic
+                :MStatisticChiSquared
+                :MStatisticDegreesOfFreedom
+                :MajorityClassSize
+                :MaxNominalAttDistinctValues
+                :MeanAttributeEntropy
+                :MeanKurtosisOfNumericAtts
+                :MeanMeansOfNumericAtts
+                :MeanMutualInformation
+                :MeanNominalAttDistinctValues
+                :MeanSkewnessOfNumericAtts
+                :MeanStdDevOfNumericAtts
+                :MinNominalAttDistinctValues
+                :MinorityClassSize
+                :MutualInformationMean
+                :NBTreeAUC
+                :NBTreeErrRate
+                :NBTreeKappa
+                :NaiveBayesAUC
+                :NaiveBayesAdwin.changes
+                :NaiveBayesAdwin.warnings
+                :NaiveBayesDdm.changes
+                :NaiveBayesDdm.warnings
+                :NaiveBayesErrRate
+                :NaiveBayesKappa
+                :NegativePercentage
+                :NoiseToSignalRatio
+                :NumAttributes
+                :NumBinaryAtts
+                :NumMissingValues
+                :NumNominalAtts
+                :NumNumericAtts
+                :NumberOfClasses
+                :NumberOfFeatures
+                :NumberOfInstances
+                :NumberOfInstancesWithMissingValues
+                :NumberOfMissingValues
+                :NumberOfNumericFeatures
+                :NumberOfSymbolicFeatures
+                :PercentageOfBinaryAtts
+                :PercentageOfMissingValues
+                :PercentageOfNominalAtts
+                :PercentageOfNumericAtts
+                :PositivePercentage
+                :PublicationDate
+                :REPTreeDepth1AUC
+                :REPTreeDepth1ErrRate
+                :REPTreeDepth1Kappa
+                :REPTreeDepth2AUC
+                :REPTreeDepth2ErrRate
+                :REPTreeDepth2Kappa
+                :REPTreeDepth3AUC
+                :REPTreeDepth3ErrRate
+                :REPTreeDepth3Kappa
+                :RandomTreeDepth1AUC
+                :RandomTreeDepth1ErrRate
+                :RandomTreeDepth1Kappa
+                :RandomTreeDepth2AUC
+                :RandomTreeDepth2ErrRate
+                :RandomTreeDepth2Kappa
+                :RandomTreeDepth3AUC
+                :RandomTreeDepth3ErrRate
+                :RandomTreeDepth3Kappa
+                :RandomTreeDepth4AUC
+                :RandomTreeDepth4ErrRate
+                :RandomTreeDepth4Kappa
+                :RandomTreeDepth5AUC
+                :RandomTreeDepth5ErrRate
+                :RandomTreeDepth5Kappa
+                :SVMe1AUC
+                :SVMe1ErrRate
+                :SVMe1Kappa
+                :SVMe2AUC
+                :SVMe2ErrRate
+                :SVMe2Kappa
+                :SVMe3AUC
+                :SVMe3ErrRate
+                :SVMe3Kappa
+                :SimpleLogisticAUC
+                :SimpleLogisticErrRate
+                :SimpleLogisticKappa
+                :StandardDeviationRatio
+                :StdvNominalAttDistinctValues
+                :UCIRepositoryURL
+                :kNN_1NAUC
+                :kNN_1NErrRate
+                :kNN_1NKappa
+                :kNN_2NAUC
+                :kNN_2NErrRate
+                :kNN_2NKappa
+                :kNN_3NAUC
+                :kNN_3NErrRate
+                :kNN_3NKappa
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :clustering
+                :learningCurve
+                :machineLearningChallenge
+                :supervisedClassification
+                :supervisedDataStreamClassification
+                :supervisedRegression
+                :survivalAnalysis
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ApacheLicence
+                :BSD2ClauseLicence
+                :EclipseLicence
+                :GPLv2
+                :GPLv3
+                :LGPLv3
+                :MITLicence
+                :MPL2.0
+                :noLicence
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :area_under_roc_curve
+                :average_cost
+                :build_cpu_time
+                :build_memory
+                :c_index
+                :class_complexity
+                :class_complexity_gain
+                :confusion_matrix
+                :correlation_coefficient
+                :f_measure
+                :kappa
+                :kb_relative_information_score
+                :kohavi_wolpert_bias_squared
+                :kohavi_wolpert_error
+                :kohavi_wolpert_sigma_squared
+                :kohavi_wolpert_variance
+                :kononenko_bratko_information_score
+                :matthews_correlation_coefficient
+                :mean_absolute_error
+                :mean_class_complexity
+                :mean_class_complexity_gain
+                :mean_f_measure
+                :mean_kononenko_bratko_information_score
+                :mean_precision
+                :mean_prior_absolute_error
+                :mean_prior_class_complexity
+                :mean_recall
+                :mean_weighted_area_under_roc_curve
+                :mean_weighted_f_measure
+                :mean_weighted_precision
+                :mean_weighted_recall
+                :number_of_instances
+                :os_information
+                :precision
+                :predictive_accuracy
+                :prior_class_complexity
+                :prior_entropy
+                :ram_hours
+                :recall
+                :relative_absolute_error
+                :root_mean_prior_squared_error
+                :root_mean_squared_error
+                :root_relative_squared_error
+                :run_cpu_time
+                :run_memory
+                :run_virtual_memory
+                :scimark_benchmark
+                :single_point_area_under_roc_curve
+                :total_cost
+                :unclassified_instance_count
+                :usercpu_time_millis
+                :usercpu_time_millis_testing
+                :usercpu_time_millis_training
+                :webb_bias
+                :webb_error
+                :webb_variance
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :CC0
+                :CCBY
+                :CCBY-NC
+                :CCBY-NC-ND
+                :CCBY-NC-SA
+                :CCBY-ND
+                :CCBY-SA
+                :publiclyAvailable
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :dataQuality
+                :dataset
+                :feature
+                :featureQuality
+                :flow
+                :run
+              )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+
