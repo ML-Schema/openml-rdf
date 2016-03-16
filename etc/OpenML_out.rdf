@@ -1090,6 +1090,19 @@
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#run_id"/>
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#suggest"/>
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#run_flow"/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#ApacheLicence"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#BSD2ClauseLicence"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#EclipseLicence"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#GPLv2"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#GPLv3"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#LGPLv3"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#MITLicence"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#MPL2.0"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#noLicence"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#uploader_id"/>
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#description">
     <rdfs:subClassOf rdf:resource="http://www.openml.org/vocabulary#ProvenanceEntity"/>
@@ -1104,8 +1117,20 @@
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#status"/>
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#nr_of_downloads"/>
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#visibility"/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#dataQuality"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#dataset"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#feature"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#featureQuality"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#flow"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#run"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#source_data"/>
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#url"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#exact_name"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#format"/>
   <owl:AllDisjointClasses>
     <owl:members rdf:parseType="Collection">
       <owl:Class rdf:about="http://www.openml.org/vocabulary#CC0"/>
@@ -1118,41 +1143,22 @@
       <owl:Class rdf:about="http://www.openml.org/vocabulary#publiclyAvailable"/>
     </owl:members>
   </owl:AllDisjointClasses>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#exact_name"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#format"/>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#dataQuality"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#dataset"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#feature"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#featureQuality"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#flow"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#run"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#creator"/>
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#components"/>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#BiasVarianceProfile"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#BiasWeightKohaviWolpert"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#BiasWeightWebb"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesMissingValues"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNominalFeatures"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNominalTarget"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNonBinaryClasses"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNumericFeatures"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNumericTarget"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#PerformsClassification"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#PerformsRegression"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#VarianceWeightKohaviWolpert"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#VarianceWeightWebb"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#flow_id"/>
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#date"/>
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#runs"/>
   <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#last_update"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#dependencies"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#output_files"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#features"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#version_label"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#data_id"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#uploader"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#contributor">
+    <rdfs:subClassOf rdf:resource="http://www.openml.org/vocabulary#ProvenanceEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </owl:OntologyProperty>
   <owl:AllDisjointClasses>
     <owl:members rdf:parseType="Collection">
       <owl:Class rdf:about="http://www.openml.org/vocabulary#area_under_roc_curve"/>
@@ -1213,16 +1219,52 @@
       <owl:Class rdf:about="http://www.openml.org/vocabulary#webb_variance"/>
     </owl:members>
   </owl:AllDisjointClasses>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#dependencies"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#output_files"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#features"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#version_label"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#data_id"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#uploader"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#contributor">
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#task_id"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#tasktype"/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#BiasVarianceProfile"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#BiasWeightKohaviWolpert"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#BiasWeightWebb"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesMissingValues"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNominalFeatures"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNominalTarget"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNonBinaryClasses"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNumericFeatures"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNumericTarget"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#PerformsClassification"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#PerformsRegression"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#VarianceWeightKohaviWolpert"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#VarianceWeightWebb"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#evaluation_measures"/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#clustering"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#learningCurve"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#machineLearningChallenge"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#supervisedClassification"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#supervisedDataStreamClassification"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#supervisedRegression"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#survivalAnalysis"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#evaluations"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#tags"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#version">
     <rdfs:subClassOf rdf:resource="http://www.openml.org/vocabulary#ProvenanceEntity"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </owl:OntologyProperty>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#parameters"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#update_comment"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#estimation_procedure"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#installation_notes"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#full_description"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#ignore_attribute"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#run_task"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#external_version"/>
+  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#target_feature"/>
   <owl:AllDisjointClasses>
     <owl:members rdf:parseType="Collection">
       <owl:Class rdf:about="http://www.openml.org/vocabulary#ClassCount"/>
@@ -1356,46 +1398,4 @@
       <owl:Class rdf:about="http://www.openml.org/vocabulary#kNN_3NKappa"/>
     </owl:members>
   </owl:AllDisjointClasses>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#task_id"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#tasktype"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#evaluation_measures"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#evaluations"/>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#clustering"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#learningCurve"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#machineLearningChallenge"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#supervisedClassification"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#supervisedDataStreamClassification"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#supervisedRegression"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#survivalAnalysis"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#tags"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#version">
-    <rdfs:subClassOf rdf:resource="http://www.openml.org/vocabulary#ProvenanceEntity"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </owl:OntologyProperty>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#parameters"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#update_comment"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#estimation_procedure"/>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#ApacheLicence"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#BSD2ClauseLicence"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#EclipseLicence"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#GPLv2"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#GPLv3"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#LGPLv3"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#MITLicence"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#MPL2.0"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#noLicence"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#installation_notes"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#full_description"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#ignore_attribute"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#run_task"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#external_version"/>
-  <owl:OntologyProperty rdf:about="http://www.openml.org/vocabulary#target_feature"/>
 </rdf:RDF>

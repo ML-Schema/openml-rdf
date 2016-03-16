@@ -25,7 +25,8 @@ import org.openml.rdf.util.Util;
  */
 public class VocabularyBuilder {
 
-	private static final String ONTO_NAMESPACE = "http://www.openml.org/vocabulary#";
+	public static final String COMMON_NAMESPACE = "http://www.openml.org/";
+	public static final String ONTO_NAMESPACE = COMMON_NAMESPACE + "vocabulary#";
 
 	/**
 	 * Set this to 'true' to export tab-separated files for annotation.
@@ -61,7 +62,7 @@ public class VocabularyBuilder {
 		logger.info("Started.");
 		String base = System.getProperty("user.dir") + "/";
 		FileOutputStream file = new FileOutputStream(new File(base + outFile));
-		Model m = RDFDataMgr.loadModel(base + inFile, Lang.RDFXML);
+		Model m = RDFDataMgr.loadModel(base + inFile);
 		Scanner in = new Scanner(new File(specFile));
 		while (in.hasNextLine()) {
 			String[] line = in.nextLine().split("\t");
@@ -70,7 +71,7 @@ public class VocabularyBuilder {
 		in.close();
 		logger.info("Writing to file "+outFile+ "...");
 		
-		m.write(file, "RDF/XML");
+		m.write(file);
 		
 		file.close();
 		logger.info("Done.");
