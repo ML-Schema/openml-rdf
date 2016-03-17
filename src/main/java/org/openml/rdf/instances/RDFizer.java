@@ -19,12 +19,11 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.log4j.Logger;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.openml.rdf.util.Util;
 import org.openml.rdf.vocabulary.VocabularyBuilder;
-
-import com.fasterxml.jackson.databind.util.Annotations;
 
 /**
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
@@ -32,25 +31,43 @@ import com.fasterxml.jackson.databind.util.Annotations;
  */
 public class RDFizer {
 	
-	private static HashMap<String, String> classToNS = new HashMap<>();
+	private static final HashMap<String, String> BASE_VAR = new HashMap<>();
 
-	private static HashMap<String, String> nsToClass = new HashMap<>();
-	
 	private static HashMap<String, Annotation> annotations = new HashMap<>();
 	
 	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
 
-	
+	private static enum Names {
+		
+		Dataset("d"),
+		Task("t"),
+		EstimationProcedure("ep"),
+		Tag("tag");
+		
+		Names(String abbrev) {
+			this.abbrev = abbrev;
+			this.ns = VocabularyBuilder.COMMON_NAMESPACE + abbrev + "/";
+			this.classURI = VocabularyBuilder.ONTO_NAMESPACE + name();
+			
+		}
+		
+		static Names byName(String name) {
+			for(Names n : Names.values())
+				if(n.name().equals(name))
+					return n;
+			return null;
+		}
 
-	static {
-		
-		classToNS.put("Task", VocabularyBuilder.COMMON_NAMESPACE + "t/");
-		nsToClass.put("t", VocabularyBuilder.ONTO_NAMESPACE + "Task");
-		
-		// TODO
-		
+		static Names byAbbrev(String abbrev) {
+			for(Names n : Names.values())
+				if(n.abbrev.equals(abbrev))
+					return n;
+			return null;
+		}
+
+		String ns, abbrev, classURI;
 	}
-	
+		
 	private static Logger logger = Logger.getLogger(VocabularyBuilder.class);
 
 	private static RDFizer instance;
@@ -58,12 +75,22 @@ public class RDFizer {
 	protected RDFizer() {
 		super();
 	}
+	
+	static {
+		BASE_VAR.put("rdf", RDF.getURI());
+		BASE_VAR.put("oml", VocabularyBuilder.ONTO_NAMESPACE);
+		// ...
+		for(Names n : Names.values())
+			BASE_VAR.put("oml" + n.abbrev, n.ns);
+		logger.info("base_var = " + BASE_VAR);
+	}
 
 	public static RDFizer getInstance() throws FileNotFoundException {
 		if (instance == null) {
 			instance = new RDFizer();
-			instance.readAnnotations("Task");
-			// TODO
+			// TODO complete here
+			for(String s : new String[] { "Task" })
+				instance.readAnnotations(s);
 		}
 		return instance;
 	}
@@ -72,13 +99,14 @@ public class RDFizer {
 	public void rdfize(String className, String id) throws JSONException, IOException {
 		
 		
-		JSONObject json = Util.readJsonFromUrl("http://www.openml.org/"+classToNS.get(className)+id+"/json");
+		String entityURI = Names.byName(className).ns + id;
+		JSONObject json = Util.readJsonFromUrl(entityURI +"/json");
 		logger.info(json);
 		
 		Model openML = RDFDataMgr.loadModel(System.getProperty("user.dir") + "/etc/OpenML.rdf");
 		Model m = ModelFactory.createDefaultModel();
 		
-		Resource subject = openML.createResource(classToNS.get(className) + id);
+		Resource subject = openML.createResource(entityURI);
 		Resource classRes = openML.createResource(VocabularyBuilder.ONTO_NAMESPACE + className);
 		m.add(subject, RDF.type, classRes);
 		
@@ -107,8 +135,25 @@ public class RDFizer {
 					
 					String aObj = a.get(aKey);
 					
-					// build second-level map
-					JSONObject jObj = new JSONObject(aObj);
+					// build variables
+					HashMap<String, String> var = new HashMap<>(BASE_VAR);
+					for(String k : json.keySet()) // first level
+						var.put(k, json.get(k).toString());
+					try {
+						JSONObject jObj = new JSONObject(object);
+						for(String k : jObj.keySet()) // second level
+							var.put("_" + k, jObj.get(k).toString());
+					} catch (JSONException e) {}
+					try {
+						JSONArray jArr = new JSONArray(object);
+						for(int i=0; i<jArr.length(); i++) {
+							JSONObject jObj = jArr.getJSONObject(i);
+							for(String k : jObj.keySet()) // second level
+								var.put("_" + k + Integer.valueOf(i), jObj.get(k).toString());
+						}
+						var.put("multi", String.valueOf(jArr.length()));
+					} catch (JSONException e) {}
+					logger.info("var = " + var);
 					
 					// script core
 					switch(aKey) {
@@ -116,26 +161,72 @@ public class RDFizer {
 						propRes = m.createProperty(aObj);
 						continue;
 					case "lookup": // lookup existing classes and assign result as object URI
-						// TODO
+						// TODO store class URI
 						continue;
 					case "ns": // build concatenation using this namespace
-						cc.setNs(aObj);
+						cc.setNs(Names.byAbbrev(aObj).ns);
 						continue;
-					case "id": // build concatenation using this id
-						// TODO
-//						cc.setId(aObj);
+					case "id": // build concatenation using this variable
+						cc.setId(var.get(aObj));
 						continue;
 					case "add": // add triple
 						// TODO
-						String[] triple = aObj.split(" ");
-//						m.add(m.createResource())
+						if(var.containsKey("multi")) {
+							int n = Integer.parseInt(var.get("multi"));
+							for(int i=0; i<n; i++) {
+								String[] triple = aObj.split(" ");
+								String[] trS = triple[0].split(":");
+								String[] trP = triple[1].split(":");
+								String[] trO = triple[2].split(":");
+								
+								String suffS = var.containsKey(trS[1]) ? var.get(trS[1]) : null; 
+								String suffP = var.containsKey(trP[1]) ? var.get(trP[1]) : null; 
+								String suffO = var.containsKey(trO[1]) ? var.get(trO[1]) : null;
+								
+								if(suffS == null) {
+									String s = trS[1] + String.valueOf(i);
+									suffS = var.containsKey(s) ? suffS = var.get(s) : trS[1];
+								}
+								if(suffP == null) {
+									String s = trP[1] + String.valueOf(i);
+									suffP = var.containsKey(s) ? suffP = var.get(s) : trP[1];
+								}
+								if(suffO == null) {
+									String s = trO[1] + String.valueOf(i);
+									suffO = var.containsKey(s) ? suffO = var.get(s) : trO[1];
+								}
+								
+								Resource s = m.createResource(var.get(trS[0]) + suffS);
+								Property p = m.createProperty(var.get(trP[0]) + suffP);
+								Resource o = m.createResource(var.get(trO[0]) + suffO);
+								logger.info(s + " " + p + " " + o);
+								m.add(s, p, o);
+							}
+						} else {
+							String[] triple = aObj.split(" ");
+							String[] trS = triple[0].split(":");
+							String[] trP = triple[1].split(":");
+							String[] trO = triple[2].split(":");
+							String suffS = var.containsKey(trS[1]) ? var.get(trS[1]) : trS[1]; 
+							String suffP = var.containsKey(trP[1]) ? var.get(trP[1]) : trP[1]; 
+							String suffO = var.containsKey(trO[1]) ? var.get(trO[1]) : trO[1]; 
+							Resource s = m.createResource(var.get(trS[0]) + suffS);
+							Property p = m.createProperty(var.get(trP[0]) + suffP);
+							Resource o = m.createResource(var.get(trO[0]) + suffO);
+							logger.info(s + " " + p + " " + o);
+							m.add(s, p, o);
+						}
 						continue;
 					}
 					
 				}
 				
-				// execute script
-				m.add(subject, propRes, object);
+				try { // executes only if ns and id are there
+					m.add(subject, propRes, m.createResource(cc.toString()));
+				} catch (NullPointerException e) {}
+				
+				// execute script for lookup
+//				m.add(subject, propRes, uri);
 				
 			}
 			
@@ -170,6 +261,13 @@ public class RDFizer {
 			m.add(subject, propRes, m.createTypedLiteral(c));
 			return;
 		} catch (ParseException e) {}
+		try {
+			JSONArray arr = new JSONArray(object);
+			for(int i=0; i<arr.length(); i++)
+				m.add(subject, propRes, arr.getString(i));
+			return;
+		} catch(JSONException e) {}
+		
 		// last hope: as string
 		m.add(subject, propRes, object);
 	}
@@ -250,6 +348,6 @@ class Concatenation {
 	}
 	@Override
 	public String toString() {
-		return ns + id;
+		return ns.trim() + id.trim();
 	}
 }

@@ -1282,6 +1282,14 @@
     
 
 
+    <!-- http://www.openml.org/vocabulary#Tag -->
+
+    <owl:Class rdf:about="http://www.openml.org/vocabulary#Tag">
+        <rdfs:subClassOf rdf:resource="http://www.openml.org/vocabulary#OpenMLEntity"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.openml.org/vocabulary#Task -->
 
     <owl:Class rdf:about="http://www.openml.org/vocabulary#Task">
@@ -2294,14 +2302,6 @@
 
     <owl:Class rdf:about="http://www.openml.org/vocabulary#webb_variance">
         <rdfs:subClassOf rdf:resource="http://www.openml.org/vocabulary#evaluationMeasure"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.openml.org/vocabulary/Tag -->
-
-    <owl:Class rdf:about="http://www.openml.org/vocabulary/Tag">
-        <rdfs:subClassOf rdf:resource="http://www.openml.org/vocabulary#OpenMLEntity"/>
     </owl:Class>
     
 

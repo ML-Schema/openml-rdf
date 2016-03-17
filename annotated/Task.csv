@@ -1,12 +1,12 @@
 date	datatype	1/1/2015 0:00:00	TRUE	
 target_values	object	["0","1","2","3","4","5","6","7","8","9"]	TRUE	
-tasktype	object	{"tt_id":"1","name":"Supervised Classification"}	TRUE	pred=rdf:type,lookup=name
+tasktype	object	{"tt_id":"1","name":"Supervised Classification"}	TRUE	pred=rdf:type,lookup=_name
 source_data	object	{"data_id":"554","name":"mnist_784","type":"Dataset"}	TRUE	ns=d,id=data_id
 visibility	datatype	public	TRUE	
-estimation_procedure	object	{"name":"10-fold Crossvalidation","proc_id":"1","type":"Estimation Procedure"}	TRUE	ns=ep,id=proc_id,add=ep:task_id rdf:type oml:EstimationProcedure
-evaluation_measures	datatype	predictive_accuracy	TRUE	lookup=
+estimation_procedure	object	{"name":"10-fold Crossvalidation","proc_id":"1","type":"Estimation Procedure"}	TRUE	ns=ep,id=task_id,add=omlep:task_id rdf:type oml:EstimationProcedure
+evaluation_measures	datatype	predictive_accuracy	TRUE	lookup=evaluation_measures
 task_id	datatype	3573	TRUE	
 target_feature	datatype	class	TRUE	
 suggest	object	{"output":"Task 3573","input":["Supervised Classification","10-fold Crossvalidation","predictive_accuracy","mnist_784","class"],"payload":{"description":"Supervised Classification 10-fold Crossvalidation predictive_accuracy mnist_784 class","task_id":"3573","type":"task"}}	FALSE	
 runs	datatype	122	FALSE	
-tags	object	[{"uploader":"17","tag":"study_1"},{"uploader":"1","tag":"under100k"}]	TRUE	ns=tag,id=tag,add=tag:tag rdf:type oml:Tag
+tags	object	[{"uploader":"17","tag":"study_1"},{"uploader":"1","tag":"under100k"}]	TRUE	ns=tag,id=_tag,add=omltag:_tag rdf:type oml:Tag
