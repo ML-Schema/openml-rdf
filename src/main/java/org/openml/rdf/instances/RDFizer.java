@@ -25,6 +25,7 @@ import org.json.JSONObject;
 import org.openml.rdf.util.Util;
 import org.openml.rdf.vocabulary.VocabularyBuilder;
 
+
 /**
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
@@ -36,12 +37,19 @@ public class RDFizer {
 	private static HashMap<String, Annotation> annotations = new HashMap<>();
 	
 	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
+	
 
 	private static enum Names {
 		
 		Dataset("d"),
 		Task("t"),
+		Run("r"),
+		Flow("f"),
+		Study("s"),
+		DataQuality("dq"),
+		FlowQuality("fq"),
 		EstimationProcedure("ep"),
+		EvaluationMeasure("em"),
 		Tag("tag");
 		
 		Names(String abbrev) {
@@ -77,12 +85,14 @@ public class RDFizer {
 	}
 	
 	static {
+		
 		BASE_VAR.put("rdf", RDF.getURI());
 		BASE_VAR.put("oml", VocabularyBuilder.ONTO_NAMESPACE);
 		// ...
 		for(Names n : Names.values())
 			BASE_VAR.put("oml" + n.abbrev, n.ns);
 		logger.info("base_var = " + BASE_VAR);
+				
 	}
 
 	public static RDFizer getInstance() throws FileNotFoundException {
@@ -98,16 +108,16 @@ public class RDFizer {
 
 	public void rdfize(String className, String id) throws JSONException, IOException {
 		
-		
 		String entityURI = Names.byName(className).ns + id;
 		JSONObject json = Util.readJsonFromUrl(entityURI +"/json");
 		logger.info(json);
 		
 		Model openML = RDFDataMgr.loadModel(System.getProperty("user.dir") + "/etc/OpenML.rdf");
+		Lookup.populate(openML);
 		Model m = ModelFactory.createDefaultModel();
 		
 		Resource subject = openML.createResource(entityURI);
-		Resource classRes = openML.createResource(VocabularyBuilder.ONTO_NAMESPACE + className);
+		Resource classRes = openML.createResource(Names.byName(className).classURI);
 		m.add(subject, RDF.type, classRes);
 		
 		for(String jKey : json.keySet()) {
@@ -127,7 +137,7 @@ public class RDFizer {
 				parseDatatype(m, subject, propRes, object);
 				continue;
 			} else {
-				// TODO 
+				
 				Concatenation cc = new Concatenation();
 				
 				// go through all actions
@@ -162,6 +172,7 @@ public class RDFizer {
 						continue;
 					case "lookup": // lookup existing classes and assign result as object URI
 						// TODO store class URI
+						
 						continue;
 					case "ns": // build concatenation using this namespace
 						cc.setNs(Names.byAbbrev(aObj).ns);
@@ -170,7 +181,6 @@ public class RDFizer {
 						cc.setId(var.get(aObj));
 						continue;
 					case "add": // add triple
-						// TODO
 						if(var.containsKey("multi")) {
 							int n = Integer.parseInt(var.get("multi"));
 							for(int i=0; i<n; i++) {
@@ -304,50 +314,4 @@ public class RDFizer {
 		
 	}
 
-}
-
-class Annotation extends HashMap<String, String> {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 4901752427257680375L;
-	
-	String propertyName;
-	String propertyType;
-	String object;
-	boolean keep;
-	
-	public Annotation(String propertyName, String propertyType, String object,
-			boolean keep) {
-		super();
-		this.propertyName = propertyName;
-		this.propertyType = propertyType;
-		this.object = object;
-		this.keep = keep;
-	}
-
-	@Override
-	public String toString() {
-		return "Annotation [propertyName=" + propertyName + ", propertyType="
-				+ propertyType + ", object=" + object + ", keep="
-				+ keep + ", MAP=" + super.toString() + "]";
-	}
-	
-}
-
-class Concatenation {
-	String ns;
-	String id;
-	
-	public void setNs(String ns) {
-		this.ns = ns;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	@Override
-	public String toString() {
-		return ns.trim() + id.trim();
-	}
 }
