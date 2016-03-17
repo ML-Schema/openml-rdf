@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2016/03/mls/openml/OpenML2MLSchemaMapping.owl#"
+     xml:base="http://www.w3.org/2016/03/mls/openml/OpenML2MLSchemaMapping.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.w3.org/2016/03/mls/openml/OpenML2MLSchemaMapping.owl">
+        <owl:imports rdf:resource="http://www.openml.org/vocabulary"/>
+        <owl:imports rdf:resource="http://www.w3.org/2016/03/mls#"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.openml.org/vocabulary#dataQuality -->
+
+    <rdf:Description rdf:about="http://www.openml.org/vocabulary#dataQuality">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/mls#DataCharacteristic"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.openml.org/vocabulary#dataset -->
+
+    <rdf:Description rdf:about="http://www.openml.org/vocabulary#dataset">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/mls#Dataset"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.openml.org/vocabulary#evaluationMeasure -->
+
+    <rdf:Description rdf:about="http://www.openml.org/vocabulary#evaluationMeasure">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/mls#EvaluationMeasure"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.openml.org/vocabulary#evaluationProcedure -->
+
+    <rdf:Description rdf:about="http://www.openml.org/vocabulary#evaluationProcedure">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/mls#EvaluationProcedure"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.openml.org/vocabulary#feature -->
+
+    <rdf:Description rdf:about="http://www.openml.org/vocabulary#feature">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/mls#Feature"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.openml.org/vocabulary#featureQuality -->
+
+    <rdf:Description rdf:about="http://www.openml.org/vocabulary#featureQuality">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/mls#FeatureCharacteristic"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.openml.org/vocabulary#flow -->
+
+    <rdf:Description rdf:about="http://www.openml.org/vocabulary#flow">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/mls#Implementation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.openml.org/vocabulary#flowQuality -->
+
+    <rdf:Description rdf:about="http://www.openml.org/vocabulary#flowQuality">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/mls#ImplementationCharacteristic"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.openml.org/vocabulary#model -->
+
+    <rdf:Description rdf:about="http://www.openml.org/vocabulary#model">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/mls#Model"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.openml.org/vocabulary#parameter -->
+
+    <rdf:Description rdf:about="http://www.openml.org/vocabulary#parameter">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/mls#HyperParameter"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.openml.org/vocabulary#parameterSetting -->
+
+    <rdf:Description rdf:about="http://www.openml.org/vocabulary#parameterSetting">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/mls#HyperParameterSetting"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.openml.org/vocabulary#run -->
+
+    <rdf:Description rdf:about="http://www.openml.org/vocabulary#run">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/mls#Run"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.openml.org/vocabulary#study -->
+
+    <rdf:Description rdf:about="http://www.openml.org/vocabulary#study">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/mls#Study"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.openml.org/vocabulary#task -->
+
+    <rdf:Description rdf:about="http://www.openml.org/vocabulary#task">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/mls#Task"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#DataCharacteristic -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/mls#DataCharacteristic"/>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Dataset -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/mls#Dataset"/>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#EvaluationMeasure -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/mls#EvaluationMeasure"/>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#EvaluationProcedure -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/mls#EvaluationProcedure"/>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Feature -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/mls#Feature"/>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#FeatureCharacteristic -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/mls#FeatureCharacteristic"/>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#HyperParameter -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/mls#HyperParameter"/>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#HyperParameterSetting -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/mls#HyperParameterSetting"/>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Implementation -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/mls#Implementation"/>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#ImplementationCharacteristic -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/mls#ImplementationCharacteristic"/>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Model -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/mls#Model"/>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Run -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/mls#Run"/>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Study -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/mls#Study"/>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Task -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/mls#Task"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+
