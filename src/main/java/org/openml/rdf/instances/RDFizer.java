@@ -2,15 +2,21 @@ package org.openml.rdf.instances;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
+import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
@@ -31,6 +37,9 @@ public class RDFizer {
 	private static HashMap<String, String> nsToClass = new HashMap<>();
 	
 	private static HashMap<String, Annotation> annotations = new HashMap<>();
+	
+	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
+
 	
 
 	static {
@@ -63,41 +72,73 @@ public class RDFizer {
 	public void rdfize(String className, String id) throws JSONException, IOException {
 		
 		
-		JSONObject json = Util.readJsonFromUrl("http://www.openml.org/t/"+id+"/json");
+		JSONObject json = Util.readJsonFromUrl("http://www.openml.org/"+classToNS.get(className)+id+"/json");
+		logger.info(json);
 		
+		Model openML = RDFDataMgr.loadModel(System.getProperty("user.dir") + "/etc/OpenML.rdf");
 		Model m = ModelFactory.createDefaultModel();
 		
-		Resource subject = m.createResource(classToNS.get(className) + id);
-		Resource classRes = m.createResource(VocabularyBuilder.ONTO_NAMESPACE + className);
+		Resource subject = openML.createResource(classToNS.get(className) + id);
+		Resource classRes = openML.createResource(VocabularyBuilder.ONTO_NAMESPACE + className);
 		m.add(subject, RDF.type, classRes);
 		
-		for(String key : json.keySet()) {
+		for(String jKey : json.keySet()) {
 			
-			String property = VocabularyBuilder.ONTO_NAMESPACE + key;
-			Annotation a = annotations.get(property);
-					
+			String property = VocabularyBuilder.ONTO_NAMESPACE + jKey;
+			Property propRes = m.createProperty(property);
+			Annotation a = annotations.get(jKey);
+			
+			String object = json.get(jKey).toString();
+			
 			if(a.keep == false) // skip
 				continue;
 			
 			// understand what the object will be
 			if(a.isEmpty()) {
-				// TODO parse datatype
+				// parse datatype
+				parseDatatype(m, subject, propRes, object);
+				continue;
 			} else {
-				
 				// TODO 
-//				for(String )
+				for(String aKey : a.keySet()) {
+					
+				}
 				
 			}
 			
 		}
 
-		
-		
-		
-		logger.info("====== STATEMENTS ======");
+		logger.info("====== GENERATED STATEMENTS ======");
 		for(Statement st : m.listStatements().toList())
 			logger.info(st);
 		
+		// save to output
+		openML.add(m);
+		FileOutputStream file = new FileOutputStream(System.getProperty("user.dir") + "/etc/OpenML_out.rdf");
+		openML.write(file);
+		
+	}
+
+	private void parseDatatype(Model m, Resource subject, Property propRes, String object) {
+		// integer
+		try {
+			m.add(subject, propRes, m.createTypedLiteral(Integer.parseInt(object)));
+			return;
+		} catch (NumberFormatException e1) {}
+		// double
+		try {
+			m.add(subject, propRes, m.createTypedLiteral(Double.parseDouble(object)));
+			return;
+		} catch (NumberFormatException e2) {}
+		// date
+		try {
+			Calendar c = Calendar.getInstance();
+			c.setTime(sdf.parse(object));
+			m.add(subject, propRes, m.createTypedLiteral(c));
+			return;
+		} catch (ParseException e) {}
+		// last hope: as string
+		m.add(subject, propRes, object);
 	}
 
 	private void readAnnotations(String string) throws FileNotFoundException {
@@ -143,22 +184,22 @@ class Annotation extends HashMap<String, String> {
 	
 	String propertyName;
 	String propertyType;
-	String exampleObject;
+	String object;
 	boolean keep;
 	
-	public Annotation(String propertyName, String propertyType, String exampleObject,
+	public Annotation(String propertyName, String propertyType, String object,
 			boolean keep) {
 		super();
 		this.propertyName = propertyName;
 		this.propertyType = propertyType;
-		this.exampleObject = exampleObject;
+		this.object = object;
 		this.keep = keep;
 	}
 
 	@Override
 	public String toString() {
 		return "Annotation [propertyName=" + propertyName + ", propertyType="
-				+ propertyType + ", exampleObject=" + exampleObject + ", keep="
+				+ propertyType + ", object=" + object + ", keep="
 				+ keep + ", MAP=" + super.toString() + "]";
 	}
 	
