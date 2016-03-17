@@ -100,9 +100,42 @@ public class RDFizer {
 				continue;
 			} else {
 				// TODO 
+				Concatenation cc = new Concatenation();
+				
+				// go through all actions
 				for(String aKey : a.keySet()) {
 					
+					String aObj = a.get(aKey);
+					
+					// build second-level map
+					JSONObject jObj = new JSONObject(aObj);
+					
+					// script core
+					switch(aKey) {
+					case "pred": // change predicate
+						propRes = m.createProperty(aObj);
+						continue;
+					case "lookup": // lookup existing classes and assign result as object URI
+						// TODO
+						continue;
+					case "ns": // build concatenation using this namespace
+						cc.setNs(aObj);
+						continue;
+					case "id": // build concatenation using this id
+						// TODO
+//						cc.setId(aObj);
+						continue;
+					case "add": // add triple
+						// TODO
+						String[] triple = aObj.split(" ");
+//						m.add(m.createResource())
+						continue;
+					}
+					
 				}
+				
+				// execute script
+				m.add(subject, propRes, object);
 				
 			}
 			
@@ -203,6 +236,20 @@ class Annotation extends HashMap<String, String> {
 				+ keep + ", MAP=" + super.toString() + "]";
 	}
 	
+}
+
+class Concatenation {
+	String ns;
+	String id;
 	
-	
+	public void setNs(String ns) {
+		this.ns = ns;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	@Override
+	public String toString() {
+		return ns + id;
+	}
 }
