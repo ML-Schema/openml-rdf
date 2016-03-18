@@ -17,6 +17,7 @@ import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.sparql.core.Var;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
@@ -24,6 +25,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.openml.rdf.util.Util;
 import org.openml.rdf.vocabulary.VocabularyBuilder;
+
+import com.github.andrewoma.dexx.collection.ArrayList;
 
 
 /**
@@ -113,7 +116,7 @@ public class RDFizer {
 		logger.info(json);
 		
 		Model openML = RDFDataMgr.loadModel(System.getProperty("user.dir") + "/etc/OpenML.rdf");
-		Lookup.populate(openML);
+		Lookup.getInstance().populate(openML);
 		Model m = ModelFactory.createDefaultModel();
 		
 		Resource subject = openML.createResource(entityURI);
@@ -139,6 +142,7 @@ public class RDFizer {
 			} else {
 				
 				Concatenation cc = new Concatenation();
+				Resource uri = null;
 				
 				// go through all actions
 				for(String aKey : a.keySet()) {
@@ -171,8 +175,8 @@ public class RDFizer {
 						propRes = m.createProperty(aObj);
 						continue;
 					case "lookup": // lookup existing classes and assign result as object URI
-						// TODO store class URI
-						
+						String string = var.get(aObj);
+						uri = Lookup.getInstance().mostSimilar(string);
 						continue;
 					case "ns": // build concatenation using this namespace
 						cc.setNs(Names.byAbbrev(aObj).ns);
@@ -231,12 +235,15 @@ public class RDFizer {
 					
 				}
 				
+				System.out.println("ns = "+cc.ns+"; id = "+cc.id);
+				
 				try { // executes only if ns and id are there
 					m.add(subject, propRes, m.createResource(cc.toString()));
 				} catch (NullPointerException e) {}
 				
 				// execute script for lookup
-//				m.add(subject, propRes, uri);
+				if(uri != null)
+					m.add(subject, propRes, uri);
 				
 			}
 			
