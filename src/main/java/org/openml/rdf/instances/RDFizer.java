@@ -291,7 +291,8 @@ public class RDFizer {
 		} catch(JSONException e) {}
 		
 		// last hope: as string
-		m.add(subject, propRes, object);
+		if(!object.equals("null"))
+			m.add(subject, propRes, object);
 	}
 
 	private void readAnnotations(String string) throws FileNotFoundException {
