@@ -17,7 +17,6 @@ import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.riot.RDFDataMgr;
-import org.apache.jena.sparql.core.Var;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
@@ -25,8 +24,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.openml.rdf.util.Util;
 import org.openml.rdf.vocabulary.VocabularyBuilder;
-
-import com.github.andrewoma.dexx.collection.ArrayList;
 
 
 /**
@@ -79,7 +76,7 @@ public class RDFizer {
 		String ns, abbrev, classURI;
 	}
 		
-	private static Logger logger = Logger.getLogger(VocabularyBuilder.class);
+	private static Logger logger = Logger.getLogger(RDFizer.class);
 
 	private static RDFizer instance;
 
@@ -172,7 +169,9 @@ public class RDFizer {
 					// script core
 					switch(aKey) {
 					case "pred": // change predicate
-						propRes = m.createProperty(aObj);
+						String[] p1 = aObj.split(":");
+						String sf1 = var.containsKey(p1[1]) ? var.get(p1[1]) : p1[1]; 
+						propRes = m.createProperty(var.get(p1[0]) + sf1);
 						continue;
 					case "lookup": // lookup existing classes and assign result as object URI
 						String string = var.get(aObj);
@@ -182,7 +181,12 @@ public class RDFizer {
 						cc.setNs(Names.byAbbrev(aObj).ns);
 						continue;
 					case "id": // build concatenation using this variable
-						cc.setId(var.get(aObj));
+						if(var.containsKey("multi")) {
+							int n = Integer.parseInt(var.get("multi"));
+							for(int i=0; i<n; i++)
+								cc.addId(var.get(aObj + i));
+						} else
+							cc.addId(var.get(aObj));
 						continue;
 					case "add": // add triple
 						if(var.containsKey("multi")) {
@@ -238,8 +242,9 @@ public class RDFizer {
 				System.out.println("ns = "+cc.ns+"; id = "+cc.id);
 				
 				try { // executes only if ns and id are there
-					m.add(subject, propRes, m.createResource(cc.toString()));
-				} catch (NullPointerException e) {}
+					for(int i=0; i<cc.id.size(); i++)
+						m.add(subject, propRes, m.createResource(cc.get(i)));
+				} catch (Exception e) {}
 				
 				// execute script for lookup
 				if(uri != null)

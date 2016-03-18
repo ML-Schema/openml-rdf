@@ -1,7 +1,6 @@
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns="http://www.openml.org/vocabulary#"
-    xmlns:j.0="rdf:"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:omlu="http://www.openml.org/u/"
     xmlns:omlf="http://www.openml.org/f/"
@@ -1104,132 +1103,6 @@
   <owl:Class rdf:about="http://www.openml.org/vocabulary#CCBY">
     <rdfs:subClassOf rdf:resource="http://www.openml.org/vocabulary#licence"/>
   </owl:Class>
-  <Tag rdf:about="http://www.openml.org/tag/study_1"/>
-  <Tag rdf:about="http://www.openml.org/tag/under100k"/>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#ApacheLicence"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#BSD2ClauseLicence"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#EclipseLicence"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#GPLv2"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#GPLv3"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#LGPLv3"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#MITLicence"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#MPL2.0"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#noLicence"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
-  <Task rdf:about="http://www.openml.org/t/3573">
-    <target_values>9</target_values>
-    <task_id rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-    >3573</task_id>
-    <target_values>7</target_values>
-    <target_values>2</target_values>
-    <target_values>0</target_values>
-    <estimation_procedure>
-      <EstimationProcedure rdf:about="http://www.openml.org/ep/3573"/>
-    </estimation_procedure>
-    <target_values>8</target_values>
-    <target_values>5</target_values>
-    <target_feature>class</target_feature>
-    <evaluation_measures rdf:resource="http://www.openml.org/vocabulary#predictive_accuracy"/>
-    <target_values>3</target_values>
-    <visibility>public</visibility>
-    <target_values>1</target_values>
-    <date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
-    >2014-12-31T23:00:00Z</date>
-    <target_values>6</target_values>
-    <j.0:type rdf:resource="http://www.openml.org/vocabulary#supervisedClassification"/>
-    <target_values>4</target_values>
-  </Task>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#clustering"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#learningCurve"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#machineLearningChallenge"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#supervisedClassification"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#supervisedDataStreamClassification"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#supervisedRegression"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#survivalAnalysis"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#BiasVarianceProfile"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#BiasWeightKohaviWolpert"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#BiasWeightWebb"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesMissingValues"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNominalFeatures"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNominalTarget"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNonBinaryClasses"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNumericFeatures"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNumericTarget"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#PerformsClassification"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#PerformsRegression"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#VarianceWeightKohaviWolpert"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#VarianceWeightWebb"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#area_under_roc_curve"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#average_cost"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#build_cpu_time"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#build_memory"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#c_index"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#class_complexity"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#class_complexity_gain"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#confusion_matrix"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#correlation_coefficient"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#f_measure"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#kappa"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#kb_relative_information_score"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#kohavi_wolpert_bias_squared"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#kohavi_wolpert_error"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#kohavi_wolpert_sigma_squared"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#kohavi_wolpert_variance"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#kononenko_bratko_information_score"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#matthews_correlation_coefficient"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_absolute_error"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_class_complexity"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_class_complexity_gain"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_f_measure"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_kononenko_bratko_information_score"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_precision"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_prior_absolute_error"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_prior_class_complexity"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_recall"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_weighted_area_under_roc_curve"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_weighted_f_measure"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_weighted_precision"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_weighted_recall"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#number_of_instances"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#os_information"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#precision"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#predictive_accuracy"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#prior_class_complexity"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#prior_entropy"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#ram_hours"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#recall"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#relative_absolute_error"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#root_mean_prior_squared_error"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#root_mean_squared_error"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#root_relative_squared_error"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#run_cpu_time"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#run_memory"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#run_virtual_memory"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#scimark_benchmark"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#single_point_area_under_roc_curve"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#total_cost"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#unclassified_instance_count"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#usercpu_time_millis"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#usercpu_time_millis_testing"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#usercpu_time_millis_training"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#webb_bias"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#webb_error"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#webb_variance"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
   <owl:AllDisjointClasses>
     <owl:members rdf:parseType="Collection">
       <owl:Class rdf:about="http://www.openml.org/vocabulary#ClassCount"/>
@@ -1365,12 +1238,133 @@
   </owl:AllDisjointClasses>
   <owl:AllDisjointClasses>
     <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#dataQuality"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#dataset"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#feature"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#featureQuality"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#flow"/>
-      <owl:Class rdf:about="http://www.openml.org/vocabulary#run"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#area_under_roc_curve"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#average_cost"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#build_cpu_time"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#build_memory"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#c_index"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#class_complexity"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#class_complexity_gain"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#confusion_matrix"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#correlation_coefficient"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#f_measure"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#kappa"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#kb_relative_information_score"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#kohavi_wolpert_bias_squared"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#kohavi_wolpert_error"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#kohavi_wolpert_sigma_squared"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#kohavi_wolpert_variance"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#kononenko_bratko_information_score"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#matthews_correlation_coefficient"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_absolute_error"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_class_complexity"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_class_complexity_gain"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_f_measure"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_kononenko_bratko_information_score"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_precision"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_prior_absolute_error"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_prior_class_complexity"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_recall"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_weighted_area_under_roc_curve"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_weighted_f_measure"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_weighted_precision"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#mean_weighted_recall"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#number_of_instances"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#os_information"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#precision"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#predictive_accuracy"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#prior_class_complexity"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#prior_entropy"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#ram_hours"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#recall"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#relative_absolute_error"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#root_mean_prior_squared_error"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#root_mean_squared_error"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#root_relative_squared_error"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#run_cpu_time"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#run_memory"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#run_virtual_memory"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#scimark_benchmark"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#single_point_area_under_roc_curve"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#total_cost"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#unclassified_instance_count"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#usercpu_time_millis"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#usercpu_time_millis_testing"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#usercpu_time_millis_training"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#webb_bias"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#webb_error"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#webb_variance"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#BiasVarianceProfile"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#BiasWeightKohaviWolpert"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#BiasWeightWebb"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesMissingValues"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNominalFeatures"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNominalTarget"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNonBinaryClasses"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNumericFeatures"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#HandlesNumericTarget"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#PerformsClassification"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#PerformsRegression"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#VarianceWeightKohaviWolpert"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#VarianceWeightWebb"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <Task rdf:about="http://www.openml.org/t/3573">
+    <target_values>9</target_values>
+    <task_id rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3573</task_id>
+    <target_values>7</target_values>
+    <target_values>2</target_values>
+    <target_values>0</target_values>
+    <estimation_procedure>
+      <EstimationProcedure rdf:about="http://www.openml.org/ep/3573"/>
+    </estimation_procedure>
+    <tags>
+      <Tag rdf:about="http://www.openml.org/tag/under100k"/>
+    </tags>
+    <target_values>8</target_values>
+    <target_values>5</target_values>
+    <target_feature>class</target_feature>
+    <evaluation_measures rdf:resource="http://www.openml.org/vocabulary#predictive_accuracy"/>
+    <target_values>3</target_values>
+    <visibility>public</visibility>
+    <rdf:type rdf:resource="http://www.openml.org/vocabulary#supervisedClassification"/>
+    <source_data rdf:resource="http://www.openml.org/d/554"/>
+    <target_values>1</target_values>
+    <date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2014-12-31T23:00:00Z</date>
+    <target_values>6</target_values>
+    <target_values>4</target_values>
+    <tags>
+      <Tag rdf:about="http://www.openml.org/tag/study_1"/>
+    </tags>
+  </Task>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#clustering"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#learningCurve"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#machineLearningChallenge"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#supervisedClassification"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#supervisedDataStreamClassification"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#supervisedRegression"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#survivalAnalysis"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#ApacheLicence"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#BSD2ClauseLicence"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#EclipseLicence"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#GPLv2"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#GPLv3"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#LGPLv3"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#MITLicence"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#MPL2.0"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#noLicence"/>
     </owl:members>
   </owl:AllDisjointClasses>
   <owl:AllDisjointClasses>
@@ -1383,6 +1377,16 @@
       <owl:Class rdf:about="http://www.openml.org/vocabulary#CCBY-ND"/>
       <owl:Class rdf:about="http://www.openml.org/vocabulary#CCBY-SA"/>
       <owl:Class rdf:about="http://www.openml.org/vocabulary#publiclyAvailable"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#dataQuality"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#dataset"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#feature"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#featureQuality"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#flow"/>
+      <owl:Class rdf:about="http://www.openml.org/vocabulary#run"/>
     </owl:members>
   </owl:AllDisjointClasses>
 </rdf:RDF>
