@@ -11,7 +11,7 @@ import org.json.JSONException;
  */
 public class RDFizeAll {
 
-	public static void run(String args) {
+	public static void run(String args, int from, int to) {
 		RDFizer rdf = null;
 		try {
 			rdf = RDFizer.getInstance();
@@ -19,7 +19,7 @@ public class RDFizeAll {
 			// TODO Auto-generated catch block
 			RDFizer.logger.error(e1.getMessage());
 		}
-		for (int i = 1; i <= 8707; i++)
+		for (int i = from; i <= to; i++)
 			try {
 				rdf.rdfize(args, String.valueOf(i));
 			} catch (JSONException | IOException e) {

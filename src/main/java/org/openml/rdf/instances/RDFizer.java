@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -16,7 +17,6 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
-import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
@@ -112,7 +112,9 @@ public class RDFizer {
 		JSONObject json = Util.readJsonFromUrl(entityURI +"/json");
 		logger.info(json);
 		
-		Model openML = RDFDataMgr.loadModel(System.getProperty("user.dir") + "/etc/OpenML.rdf");
+		Model openML = ModelFactory.createDefaultModel();
+		File f = new File(System.getProperty("user.dir") + "/etc/OpenML.rdf");
+		openML.read(f.toURI().toString());
 		Lookup.getInstance().populate(openML);
 		Model m = ModelFactory.createDefaultModel();
 		

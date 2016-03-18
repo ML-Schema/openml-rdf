@@ -33,7 +33,7 @@ public class Main {
 			}
 			return;
 		case "populate":
-			RDFizeAll.run(args[1]);
+			RDFizeAll.run(args[1], Integer.parseInt(args[2]), Integer.parseInt(args[3]));
 			return;
 		}
 		
