@@ -76,7 +76,7 @@ public class RDFizer {
 		String ns, abbrev, classURI;
 	}
 		
-	private static Logger logger = Logger.getLogger(RDFizer.class);
+	protected static Logger logger = Logger.getLogger(RDFizer.class);
 
 	private static RDFizer instance;
 
@@ -125,6 +125,12 @@ public class RDFizer {
 			String property = VocabularyBuilder.ONTO_NAMESPACE + jKey;
 			Property propRes = m.createProperty(property);
 			Annotation a = annotations.get(className + "_" + jKey);
+			
+			// new properties? log them!
+			if(a == null) {
+				logger.error("Property "+jKey + " was not annotated for class "+className+ "! Skipping...");
+				continue;
+			}
 			
 			String object = json.get(jKey).toString();
 			
@@ -257,6 +263,12 @@ public class RDFizer {
 		logger.info("====== GENERATED STATEMENTS ======");
 		for(Statement st : m.listStatements().toList())
 			logger.info(st);
+		
+		// save data cube
+		FileOutputStream cube = new FileOutputStream(System.getProperty("user.dir") + "/rdf/"+className+"/"+id+".rdf");
+		m.setNsPrefixes(openML.getNsPrefixMap());
+		m.write(cube);
+		
 		
 		// save to output
 		openML.add(m);

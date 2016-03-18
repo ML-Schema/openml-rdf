@@ -65,7 +65,7 @@ class Lookup extends HashMap<String, Resource> {
 		for(String name : this.keySet()) {
 			Resource res = this.get(name);
 			double d = metric.compare(jsonObject.toLowerCase(), res.getLocalName().toLowerCase());
-			logger.info("sim("+jsonObject+", "+res.getLocalName()+" = "+ d);
+			logger.trace("sim("+jsonObject+", "+res.getLocalName()+" = "+ d);
 			if(d > max) {
 				max = d;
 				r = res;

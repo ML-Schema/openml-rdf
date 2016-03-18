@@ -3,6 +3,7 @@ package org.openml.rdf;
 import java.io.IOException;
 
 import org.json.JSONException;
+import org.openml.rdf.instances.RDFizeAll;
 import org.openml.rdf.instances.RDFizer;
 import org.openml.rdf.vocabulary.VocabularyBuilder;
 
@@ -30,6 +31,9 @@ public class Main {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			return;
+		case "populate":
+			RDFizeAll.run(args[1]);
 			return;
 		}
 		
