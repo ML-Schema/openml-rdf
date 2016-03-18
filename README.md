@@ -7,8 +7,22 @@ Integrating OpenML with Linked Data.
 mvn compile package
 ```
 
-## Usage
+## Example usage
+
+### Build vocabulary
 
 ```bash
-./openml2rdf.sh build-vocabulary etc/spec.txt etc/model.ttl
+./build-vocabulary.sh etc/spec.txt etc/OpenML.rdf etc/OpenML_out.rdf
+```
+
+### RDFize OpenML entity
+
+```bash
+./rdfize.sh Task 3573
+```
+
+### Generate all RDF files for a given class
+
+```bash
+./populate.sh Task
 ```
