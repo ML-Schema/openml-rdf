@@ -2,6 +2,7 @@ package org.openml.rdf.instances;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.json.JSONException;
 
@@ -11,17 +12,24 @@ import org.json.JSONException;
  */
 public class RDFizeAll {
 
-	public static void run(String args, int from, int to) {
-		RDFizer rdf = null;
+	public static void run(String args) {
+		RDFizer rdf;
 		try {
 			rdf = RDFizer.getInstance();
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
 			RDFizer.logger.error(e1.getMessage());
+			return;
 		}
-		for (int i = from; i <= to; i++)
+		ArrayList<String> array;
+		try {
+			array = APICaller.getIDs(args.toLowerCase());
+		} catch (JSONException | IOException e1) {
+			RDFizer.logger.error(e1.getMessage());
+			return;
+		}
+		for (String id : array)
 			try {
-				rdf.rdfize(args, String.valueOf(i));
+				rdf.rdfize(args, id);
 			} catch (JSONException | IOException e) {
 				// TODO Auto-generated catch block
 				RDFizer.logger.error(e.getMessage());
