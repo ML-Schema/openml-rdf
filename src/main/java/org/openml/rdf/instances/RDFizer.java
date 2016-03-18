@@ -99,7 +99,7 @@ public class RDFizer {
 		if (instance == null) {
 			instance = new RDFizer();
 			// TODO complete here
-			for(String s : new String[] { "Task" })
+			for(String s : new String[] { "Task", "Dataset", "Flow", "Run" })
 				instance.readAnnotations(s);
 		}
 		return instance;
@@ -124,7 +124,7 @@ public class RDFizer {
 			
 			String property = VocabularyBuilder.ONTO_NAMESPACE + jKey;
 			Property propRes = m.createProperty(property);
-			Annotation a = annotations.get(jKey);
+			Annotation a = annotations.get(className + "_" + jKey);
 			
 			String object = json.get(jKey).toString();
 			
@@ -302,6 +302,8 @@ public class RDFizer {
 		while(in.hasNextLine()) {
 			
 			String[] line = in.nextLine().split("\t");
+			if(line.length < 4)
+				continue;
 			
 			Annotation a = new Annotation(line[0], line[1], line[2], Boolean.parseBoolean(line[3]));
 			
@@ -316,7 +318,7 @@ public class RDFizer {
 				}
 			}
 			
-			annotations.put(a.propertyName, a);
+			annotations.put(string + "_" + a.propertyName, a);
 			
 		}
 		
