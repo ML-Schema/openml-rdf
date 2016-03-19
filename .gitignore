@@ -15,10 +15,10 @@ hs_err_pid*
 .DS_Store
 .classpath
 .project
-.settings/
+/.settings/
 *~
 
-etc/*.xml
+/etc/*.xml
+/rdf/
 *.log
-rdf/
 api_key

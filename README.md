@@ -24,5 +24,6 @@ mvn compile package
 ### Generate all RDF files for a given class
 
 ```bash
+sh register-api-key.sh <OPENMLAPIKEY>
 ./populate.sh Task
 ```
