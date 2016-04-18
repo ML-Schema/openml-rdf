@@ -1,0 +1,44 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:oml="http://www.openml.org/vocabulary#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:omlu="http://www.openml.org/u/"
+    xmlns:omlf="http://www.openml.org/f/"
+    xmlns:omld="http://www.openml.org/d/"
+    xmlns:omlt="http://www.openml.org/t/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:omlr="http://www.openml.org/r/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#" > 
+  <rdf:Description rdf:about="http://www.openml.org/t/3573">
+    <oml:target_values>9</oml:target_values>
+    <oml:task_id rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3573</oml:task_id>
+    <oml:target_values>7</oml:target_values>
+    <oml:target_values>2</oml:target_values>
+    <oml:target_values>0</oml:target_values>
+    <oml:estimation_procedure rdf:resource="http://www.openml.org/ep/3573"/>
+    <rdf:type rdf:resource="http://www.openml.org/vocabulary#Task"/>
+    <oml:tags rdf:resource="http://www.openml.org/tag/under100k"/>
+    <oml:target_values>8</oml:target_values>
+    <oml:target_values>5</oml:target_values>
+    <oml:target_feature>class</oml:target_feature>
+    <oml:evaluation_measures rdf:resource="http://www.openml.org/vocabulary#predictive_accuracy"/>
+    <oml:target_values>3</oml:target_values>
+    <oml:visibility>public</oml:visibility>
+    <oml:source_data rdf:resource="http://www.openml.org/d/554"/>
+    <rdf:type rdf:resource="http://www.openml.org/vocabulary#supervisedClassification"/>
+    <oml:target_values>1</oml:target_values>
+    <oml:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-12-31T23:00:00Z</oml:date>
+    <oml:target_values>6</oml:target_values>
+    <oml:target_values>4</oml:target_values>
+    <oml:tags rdf:resource="http://www.openml.org/tag/study_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.openml.org/ep/3573">
+    <rdf:type rdf:resource="http://www.openml.org/vocabulary#EstimationProcedure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.openml.org/tag/under100k">
+    <rdf:type rdf:resource="http://www.openml.org/vocabulary#Tag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.openml.org/tag/study_1">
+    <rdf:type rdf:resource="http://www.openml.org/vocabulary#Tag"/>
+  </rdf:Description>
+</rdf:RDF>

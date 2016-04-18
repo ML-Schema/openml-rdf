@@ -1,0 +1,30 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:oml="http://www.openml.org/vocabulary#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:omlu="http://www.openml.org/u/"
+    xmlns:omlf="http://www.openml.org/f/"
+    xmlns:omld="http://www.openml.org/d/"
+    xmlns:omlt="http://www.openml.org/t/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:omlr="http://www.openml.org/r/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <oml:Run rdf:about="http://www.openml.org/r/476635">
+    <oml:nr_of_likes rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >0</oml:nr_of_likes>
+    <oml:tags>
+      <oml:Tag rdf:about="http://www.openml.org/tag/weka_3.7.12"/>
+    </oml:tags>
+    <oml:tags>
+      <oml:Tag rdf:about="http://www.openml.org/tag/weka"/>
+    </oml:tags>
+    <oml:nr_of_downloads rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >0</oml:nr_of_downloads>
+    <oml:visibility>public</oml:visibility>
+    <oml:run_id rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >476635</oml:run_id>
+    <oml:uploader_id rdf:resource="http://www.openml.org/u/17"/>
+    <oml:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-01-06T12:04:25Z</oml:date>
+  </oml:Run>
+</rdf:RDF>
