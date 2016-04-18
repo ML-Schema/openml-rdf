@@ -49,7 +49,8 @@ public class RDFizer {
 		FlowQuality("fq"),
 		EstimationProcedure("ep"),
 		EvaluationMeasure("em"),
-		Tag("tag");
+		Tag("tag"),
+		User("u");
 		
 		Names(String abbrev) {
 			this.abbrev = abbrev;
@@ -266,7 +267,9 @@ public class RDFizer {
 			logger.info(st);
 		
 		// save data cube
-		FileOutputStream cube = new FileOutputStream(System.getProperty("user.dir") + "/rdf/"+className+"/"+id+".rdf");
+		File dir = new File(System.getProperty("user.dir") + "/rdf/"+className);
+		dir.mkdirs();
+		FileOutputStream cube = new FileOutputStream(dir+"/"+id+".rdf");
 		m.setNsPrefixes(openML.getNsPrefixMap());
 		m.write(cube);
 		
