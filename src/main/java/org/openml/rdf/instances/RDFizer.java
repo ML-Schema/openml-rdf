@@ -109,6 +109,7 @@ public class RDFizer {
 	public void rdfize(String className, String id) throws JSONException, IOException {
 		
 		String entityURI = Names.byName(className).ns + id;
+		logger.info("Downloading JSON file...");
 		JSONObject json = Util.readJsonFromUrl(entityURI +"/json");
 		logger.info(json);
 		
