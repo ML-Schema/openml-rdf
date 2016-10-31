@@ -37,7 +37,6 @@ public class RDFizer {
 	
 	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
 	
-
 	private static enum Names {
 		
 		Dataset("d"),
@@ -107,6 +106,10 @@ public class RDFizer {
 
 
 	public void rdfize(String className, String id) throws JSONException, IOException {
+		rdfize(className, id, false);
+	}
+	
+	public void rdfize(String className, String id, boolean saveOutput) throws JSONException, IOException {
 		
 		String entityURI = Names.byName(className).ns + id;
 		logger.info("Downloading JSON file...");
@@ -267,18 +270,22 @@ public class RDFizer {
 		for(Statement st : m.listStatements().toList())
 			logger.info(st);
 		
-		// save data cube
-		File dir = new File(System.getProperty("user.dir") + "/rdf/"+className);
-		dir.mkdirs();
-		FileOutputStream cube = new FileOutputStream(dir+"/"+id+".rdf");
-		m.setNsPrefixes(openML.getNsPrefixMap());
-		m.write(cube);
-		
-		
-		// save to output
-		openML.add(m);
-		FileOutputStream file = new FileOutputStream(System.getProperty("user.dir") + "/etc/OpenML_out.rdf");
-		openML.write(file);
+		if(saveOutput) {
+			// save data cube
+			File dir = new File(System.getProperty("user.dir") + "/rdf/"+className);
+			dir.mkdirs();
+			FileOutputStream cube = new FileOutputStream(dir+"/"+id+".rdf");
+			m.setNsPrefixes(openML.getNsPrefixMap());
+			m.write(cube);
+			
+			// save to output
+			openML.add(m);
+			FileOutputStream file = new FileOutputStream(System.getProperty("user.dir") + "/etc/OpenML_out.rdf");
+			openML.write(file);
+		} else {
+			// print output
+			openML.write(System.out);
+		}
 		
 	}
 
