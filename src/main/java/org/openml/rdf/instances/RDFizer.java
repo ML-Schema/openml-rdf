@@ -117,8 +117,8 @@ public class RDFizer {
 		logger.info(json);
 		
 		Model openML = ModelFactory.createDefaultModel();
-		File f = new File(System.getProperty("user.dir") + "/etc/OpenML.rdf");
-		openML.read(f.toURI().toString());
+//		File f = new File(System.getProperty("user.dir") + "/etc/OpenML.rdf");
+//		openML.read(f.toURI().toString());
 		Lookup.getInstance().populate(openML);
 		Model m = ModelFactory.createDefaultModel();
 		
@@ -251,7 +251,7 @@ public class RDFizer {
 					
 				}
 				
-				System.out.println("ns = "+cc.ns+"; id = "+cc.id);
+				logger.info("ns = "+cc.ns+"; id = "+cc.id);
 				
 				try { // executes only if ns and id are there
 					for(int i=0; i<cc.id.size(); i++)
@@ -270,16 +270,17 @@ public class RDFizer {
 		for(Statement st : m.listStatements().toList())
 			logger.info(st);
 		
+		m.setNsPrefixes(openML.getNsPrefixMap());
+		openML.add(m);
+		
 		if(saveOutput) {
 			// save data cube
 			File dir = new File(System.getProperty("user.dir") + "/rdf/"+className);
 			dir.mkdirs();
 			FileOutputStream cube = new FileOutputStream(dir+"/"+id+".rdf");
-			m.setNsPrefixes(openML.getNsPrefixMap());
 			m.write(cube);
 			
 			// save to output
-			openML.add(m);
 			FileOutputStream file = new FileOutputStream(System.getProperty("user.dir") + "/etc/OpenML_out.rdf");
 			openML.write(file);
 		} else {
