@@ -29,9 +29,8 @@ public class RDFizeAll {
 		}
 		for (String id : array)
 			try {
-				rdf.rdfize(args, id);
+				rdf.rdfize(args, id, true);
 			} catch (JSONException | IOException e) {
-				// TODO Auto-generated catch block
 				RDFizer.logger.error(e.getMessage());
 			}
 	}

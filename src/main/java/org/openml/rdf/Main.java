@@ -20,7 +20,6 @@ public class Main {
 			try {
 				VocabularyBuilder.getInstance().buildAll(args[1], args[2], args[3]);
 			} catch (JSONException | IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return;
@@ -28,7 +27,6 @@ public class Main {
 			try {
 				RDFizer.getInstance().rdfize(args[1], args[2]);
 			} catch (JSONException | IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return;

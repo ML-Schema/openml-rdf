@@ -36,7 +36,7 @@ public class APICaller {
 		JSONArray arr = (JSONArray) jobj.get(jobj.keys().next());
 		for (int i = 0; i < arr.length(); i++) {
 			JSONObject obj = arr.getJSONObject(i);
-			ids.add((String) obj.get(what + "_id"));
+			ids.add(String.valueOf(obj.get(what + "_id")));
 		}
 
 		return ids;
