@@ -27,7 +27,7 @@ public class APICaller {
 
 		String key = getAPIKey();
 
-		String endpoint = "http://www.openml.org/api_new/v1/json/" + what
+		String endpoint = "https://www.openml.org/api_new/v1/json/" + what
 				+ "/list?api_key=" + key;
 		logger.info("Downloading JSON list via API call...");
 		JSONObject json = Util.readJsonFromUrl(endpoint);

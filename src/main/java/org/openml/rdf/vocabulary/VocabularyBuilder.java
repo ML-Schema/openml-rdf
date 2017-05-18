@@ -23,7 +23,7 @@ import org.openml.rdf.util.Util;
  */
 public class VocabularyBuilder {
 
-	public static final String COMMON_NAMESPACE = "http://www.openml.org/";
+	public static final String COMMON_NAMESPACE = "https://www.openml.org/";
 	public static final String ONTO_NAMESPACE = COMMON_NAMESPACE + "vocabulary#";
 
 	/**

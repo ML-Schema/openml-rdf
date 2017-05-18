@@ -2,32 +2,32 @@
 
 
 <!DOCTYPE rdf:RDF [
-    <!ENTITY omlu "http://www.openml.org/u/" >
-    <!ENTITY omlf "http://www.openml.org/f/" >
-    <!ENTITY omld "http://www.openml.org/d/" >
-    <!ENTITY omlt "http://www.openml.org/t/" >
-    <!ENTITY omlr "http://www.openml.org/r/" >
+    <!ENTITY omlu "https://www.openml.org/u/" >
+    <!ENTITY omlf "https://www.openml.org/f/" >
+    <!ENTITY omld "https://www.openml.org/d/" >
+    <!ENTITY omlt "https://www.openml.org/t/" >
+    <!ENTITY omlr "https://www.openml.org/r/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY oml "http://www.openml.org/vocabulary#" >
+    <!ENTITY oml "https://www.openml.org/vocabulary#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
 
-<rdf:RDF xmlns="http://www.openml.org/vocabulary#"
-     xml:base="http://www.openml.org/vocabulary"
-     xmlns:omlr="http://www.openml.org/r/"
-     xmlns:omld="http://www.openml.org/d/"
-     xmlns:omlt="http://www.openml.org/t/"
-     xmlns:omlu="http://www.openml.org/u/"
+<rdf:RDF xmlns="https://www.openml.org/vocabulary#"
+     xml:base="https://www.openml.org/vocabulary"
+     xmlns:omlr="https://www.openml.org/r/"
+     xmlns:omld="https://www.openml.org/d/"
+     xmlns:omlt="https://www.openml.org/t/"
+     xmlns:omlu="https://www.openml.org/u/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:omlf="http://www.openml.org/f/"
-     xmlns:oml="http://www.openml.org/vocabulary#">
-    <owl:Ontology rdf:about="http://www.openml.org/vocabulary"/>
+     xmlns:omlf="https://www.openml.org/f/"
+     xmlns:oml="https://www.openml.org/vocabulary#">
+    <owl:Ontology rdf:about="https://www.openml.org/vocabulary"/>
     
 
 
