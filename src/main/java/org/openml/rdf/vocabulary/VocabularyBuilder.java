@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Property;
+import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.vocabulary.OWL;
 import org.apache.jena.vocabulary.RDF;
@@ -60,7 +61,9 @@ public class VocabularyBuilder {
 		logger.info("Started.");
 		String base = System.getProperty("user.dir") + "/";
 		FileOutputStream file = new FileOutputStream(new File(base + outFile));
-		Model m = RDFDataMgr.loadModel(base + inFile);
+		logger.info("user.dir = "+base);
+		logger.info("Opening RDF file: "+base + inFile);
+		Model m = RDFDataMgr.loadModel(base + inFile, Lang.RDFXML);
 		Scanner in = new Scanner(new File(specFile));
 		while (in.hasNextLine()) {
 			String[] line = in.nextLine().split("\t");
